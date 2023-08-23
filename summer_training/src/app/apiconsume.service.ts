@@ -8,7 +8,8 @@ import { HttpClient} from '@angular/common/http'
 export class ApiconsumeService {
 
   constructor(private http:HttpClient) { }
-  role=""
+
+
   signin(user:any):Observable<any>{
     return this.http.post<any>("http://localhost:3001/login", user);
   }

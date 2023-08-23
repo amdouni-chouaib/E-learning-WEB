@@ -7,20 +7,55 @@ import { ApiconsumeService } from '../apiconsume.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnDestroy {
-  role=sessionStorage.getItem("role")
-  token=sessionStorage.getItem("token")
+export class NavbarComponent implements OnInit , OnDestroy {
 
-constructor(private route:Router,private service:ApiconsumeService){}
+  isAdmin: boolean = false;
+  isTeacher: boolean = false;
+  isStudent: boolean = false;
+  isGuest:boolean = true;
+  allrole:boolean = false;
+
+ 
+
+constructor(private route:Router,private service:ApiconsumeService){
+}
+  ngOnInit(): void {
+    this.logged()
+  }
   
-  
+  logged(){
+     const userRole = localStorage.getItem('role')
+    if (userRole === 'admin') {
+      this.isAdmin = true 
+      this.allrole=true
+            this.isGuest=false
+
+    } else if (userRole === 'teacher') {
+      this.isTeacher = true
+      this.allrole=true
+
+            this.isGuest=false
+
+    } else if (userRole === 'student') {
+      this.isStudent = true 
+      this.allrole=true
+
+            this.isGuest=false
+
+    }
+
+
+    console.log("helllllo" , userRole)
+  }
   ngOnDestroy(): void {
-    this.role=""
-    this.token=""
-    sessionStorage.removeItem("role")
-    sessionStorage.removeItem("token")
+    localStorage.removeItem('role')
+    this.route.navigate(["/login"])
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000);
+  
 
-    this.route.navigate(["/"])
+    
   }
 
 

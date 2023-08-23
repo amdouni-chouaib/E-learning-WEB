@@ -9,23 +9,23 @@
         
         <!-- student navbar -->
         
-        <li class="nav-item active" *ngIf="role==='student'">
+        <li class="nav-item active" *ngIf="isStudent">
           <a class="nav-link" routerLink="/">Display Student</a>
         </li>
-        <li class="nav-item" *ngIf="role==='student'">
+        <li class="nav-item" *ngIf="isStudent">
           <a class="nav-link" routerLink="/training"></a>
         </li>
         <!-- admin navbar -->
 
 
 
-        <li class="nav-item active" *ngIf="role==='admin'">
+        <li class="nav-item active" *ngIf="isAdmin">
           <a class="nav-link" routerLink="/adminstudent">Display Student</a>
         </li>
-        <li class="nav-item active" *ngIf="role==='admin'">
+        <li class="nav-item active" *ngIf="isAdmin">
           <a class="nav-link" routerLink="/admincreateformation">Create Formation</a>
         </li>
-        <li class="nav-item active" *ngIf="role==='admin'">
+        <li class="nav-item active" *ngIf="isAdmin">
           <a class="nav-link" routerLink="/admincreateteacher">Create Teacher</a>
         </li>
 
@@ -33,7 +33,7 @@
 
 
         <!-- guest navbar -->
-          <div *ngIf="role===''">
+          <div *ngIf="isGuest">
 
             <li class="nav-item active" >
               <a class="nav-link" routerLink="/">Home </a>
@@ -48,7 +48,7 @@
           </div>
       </ul>
       <div  >
-       <div *ngIf="role===''">
+       <div *ngIf="isGuest">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
               
@@ -59,7 +59,7 @@
         
         </ul>
        </div>
-       <div class="btn-group dropleft" *ngIf="role!=''">
+       <div class="btn-group dropleft" *ngIf="isAdmin || isStudent || isTeacher">
         <div class="btn-group dropleft">
           <button style="padding-right:90px ;" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Profile

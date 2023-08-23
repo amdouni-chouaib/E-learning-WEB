@@ -19,11 +19,19 @@ export class LoginComponent {
     
 this.service.signin(this.myForm.value).subscribe((data:any)=>{
   console.warn(data)
-  sessionStorage.setItem("role",data.role)
-  sessionStorage.setItem("token",data.token)
   
-  
-  this.route.navigate(["/"])
+
+  localStorage.setItem("role",data.role)
+  this.route.navigate(["/adminstudent"])
+  setTimeout(() => {
+    window.location.reload();
+  }, 1000);
+
+
+
+
+
+
 })
 
 
