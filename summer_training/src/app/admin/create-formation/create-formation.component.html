@@ -1,0 +1,22 @@
+<form [formGroup]="myForm" (ngSubmit)="onsubmit()">
+    
+<div style="height: 100%; height: 100%; display: flex;justify-content: center;padding-top: 8%;padding-bottom: 5%;">
+    
+    <div class="card" style="width: 60%;">
+    
+        <div class="card-body">
+          <h5 class="card-title">Create Training </h5>
+          <label for="">Training Name</label>
+          <input type="text" formControlName="nom" class="form-control">
+          <label for="">Begin Date</label>
+          <input type="date" formControlName="datedebut" class="form-control">      
+          <label for="">End Date</label>
+          <input type="date" formControlName="datefin" class="form-control">
+          <label for="">Training Description</label>
+          <textarea name="" formControlName="description" class="form-control"></textarea> <br>
+          <button type="submit" class="btn btn-success">Valider</button>
+        </div>
+      </div>
+    
+    </div>
+</form>

@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+.rgt{
+display: flex;
+
+}
+.lft{
+display: flex;
+}
+.cnt{
+    display: flex;
+    justify-content: space-between;
+}
+p{
+    font-family: 'Comic Neue', cursive;
+    font-style: bold;
+}
+
+
+.collapse{
+display: flex;
+justify-content: space-between;
+}
