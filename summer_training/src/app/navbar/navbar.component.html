@@ -33,19 +33,17 @@
 
 
         <!-- guest navbar -->
-          <div *ngIf="isGuest">
 
-            <li class="nav-item active" >
+            <li class="nav-item active"  *ngIf="isGuest">
               <a class="nav-link" routerLink="/">Home </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" *ngIf="isGuest">
               <a class="nav-link" routerLink="/about">About Us</a>
             </li>
             
-            <li class="nav-item">
+            <li class="nav-item" *ngIf="isGuest">
               <a class="nav-link" routerLink="/contact">Contact Us</a>
             </li>
-          </div>
       </ul>
       <div  >
        <div *ngIf="isGuest">
