@@ -72,9 +72,9 @@ exports.getAll =  (Model) =>
   exports.deleteAll = (Model) =>
   asyncHandler(async (req, res) => {
     try {
-      await Model.deleteMany();
+      await Model.deleteMany({});
       res.json({ message: 'All  deleted successfully' });
     } catch (error) {
-      res.status(500).json({ error: 'An error occurred while deleting all data' });
+      res.status(500).json({ error: ' error occurred while deleting all data' });
     }
   });

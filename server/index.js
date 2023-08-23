@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const cors = require('cors'); // Import the cors package
 const authRoutes = require('./router/authRoutes');
 const userRoutes = require('./router/userRoutes');
+
+const formationRoutes = require('./router/formationRoutes');
 require('dotenv').config();
 const app = express();
 
@@ -42,6 +44,7 @@ db.once('open', () => {
 });
 app.use('/', authRoutes);
 app.use('/', userRoutes);
+app.use('/', formationRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
