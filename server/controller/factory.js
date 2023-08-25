@@ -70,7 +70,7 @@ exports.getAll =  (Model) =>
 })
 
   exports.deleteAll = (Model) =>
-  asyncHandler(async (req, res) => {
+  asyncHandler(async (res) => {
     try {
       await Model.deleteMany({});
       res.json({ message: 'All  deleted successfully' });

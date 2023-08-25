@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiconsumeService } from './apiconsume.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+
+  role:any
+  constructor(private service:ApiconsumeService){
+  }
+
+
   title = 'summer_training';
 }
