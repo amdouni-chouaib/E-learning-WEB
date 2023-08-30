@@ -21,7 +21,8 @@ import { ContactComponent } from './contact/contact.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
-import jwt_decode from 'jwt-decode'; // Note the change in the import statement
+import * as jwt_decode from 'jwt-decode'; // Import jwt_decode
+import { ProfileComponent } from './profile/profile.component'; // Note the change in the import statement
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import jwt_decode from 'jwt-decode'; // Note the change in the import statement
     AboutComponent,
     ContactComponent,
     NotfoundComponent,
-    FooterComponent
+    FooterComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +52,7 @@ import jwt_decode from 'jwt-decode'; // Note the change in the import statement
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    
     
   ],
   providers: [],

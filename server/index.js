@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors'); // Import the cors package
 const authRoutes = require('./router/authRoutes');
 const userRoutes = require('./router/userRoutes');
+const formations = require('./model/formation');
 
 const formationRoutes = require('./router/formationRoutes');
 require('dotenv').config();
@@ -41,6 +42,24 @@ const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'Connection error:'));
 db.once('open', () => {
   console.log('Connected to MongoDB');
+});
+
+
+app.get('/getalltrainings', async (req, res) => {
+  try {
+    const users = await formations.find();
+    res.json(users);
+  } catch (error) {
+    res.status(500).json({ error: 'An error occurred while fetching data' });
+  }
+})
+app.delete('/trainings', async (res) => {
+  try {
+    await formations.deleteMany({});
+    res.json({ message: 'All  deleted successfully' });
+  } catch (error) {
+    res.status(500).json({ error: ' error occurred while deleting all data' });
+  }
 });
 app.use('/', authRoutes);
 app.use('/', userRoutes);

@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ApiconsumeService } from '../apiconsume.service';
 import { Router } from '@angular/router';
+import jwt_decode from 'jwt-decode';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
   userRole: string | undefined; // Add this variable to store user role
-
+  jwt : any = ""
   constructor(private service: ApiconsumeService, private route: Router) {}
 
   myForm = new FormGroup({
@@ -23,7 +24,10 @@ export class LoginComponent {
       (data: any) => {
         // Assuming the response contains a 'role' property
         const userRole = data.role;
-        this.service.updateUserRole(userRole); // Update the user's role using the shared service
+        this.service.updateUserRole(userRole); 
+        localStorage.setItem("token",data.token)
+        this.jwt = jwt_decode(data.token)
+        this.route.navigate(["/profile/"+this.jwt.userId])
       },
       (error) => {
         console.error('Login failed', error);

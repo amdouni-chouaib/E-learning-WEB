@@ -26,8 +26,12 @@
           <a class="nav-link" routerLink="/admincreateformation">Create Formation</a>
         </li>
         <li class="nav-item active" *ngIf="userRole==='admin'">
+          <a class="nav-link" routerLink="/admindisplayteacher">Display Teacher</a>
+        </li>
+        <li class="nav-item active" *ngIf="userRole==='admin'">
           <a class="nav-link" routerLink="/admincreateteacher">Create Teacher</a>
         </li>
+        
 
         <!-- teacher navbar -->
 
@@ -35,10 +39,7 @@
           <a class="nav-link" routerLink="/adminstudent">Display Student</a>
         </li>
         <li class="nav-item active" *ngIf="userRole==='teacher'">
-          <a class="nav-link" routerLink="/admincreateformation">Create Formation</a>
-        </li>
-        <li class="nav-item active" *ngIf="userRole==='teacher'">
-          <a class="nav-link" routerLink="/admincreateteacher">Create Teacher</a>
+          <a class="nav-link" routerLink="/admincreateformation">Create Training</a>
         </li>
         <!-- basic navbar -->
 
