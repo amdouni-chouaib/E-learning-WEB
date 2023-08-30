@@ -26,7 +26,8 @@ this.userRole=role
   }
   
   logout(){
-     localStorage.removeItem('role')
+     localStorage.removeItem('token')
+     this.userRole=null
      this.route.navigate(["/login"])
   }
 

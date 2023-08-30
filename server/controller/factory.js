@@ -1,4 +1,5 @@
 const asyncHandler = require('express-async-handler');
+const user = require('../model/user')
 
 
 exports.deleteOne = (Model) =>
@@ -19,7 +20,7 @@ exports.updateOne = (Model) =>
   asyncHandler(async (req, res) => {
     try {
       const userId = req.params.id;
-      const userData = req.body;
+      const userData={firstname,lastname,email,university} = req.body;
       const updatedUser = await Model.findByIdAndUpdate(userId, userData, { new: true });
       if (!updatedUser) {
         return res.status(404).json({ error: 'not found' });
@@ -30,12 +31,31 @@ exports.updateOne = (Model) =>
     }
   });
 
-exports.createOne = (Model) =>
+  exports.createOne = (Model) =>
   asyncHandler(async (req, res) => {
-    const newDoc = await Model.create(req.body);
-    res.status(201).json({ data: newDoc });
-  });
-
+    try {
+      const { firstname, lastname, email, password, university , role,formation } = req.body;
+  
+      // Hash the password before saving it
+      const hashedPassword = await bcrypt.hash(password, 10); // 10 is the number of salt rounds
+  
+      const newUser = new user({
+        firstname,
+        lastname,
+        email,
+        password: hashedPassword,
+        university,
+        role,
+        formation
+      });
+  
+      const savedUser = await newUser.save();
+  
+      res.status(201).json(savedUser);
+    } catch (error) {
+      res.status(500).json({ error: 'An error occurred while creating the user.' });
+    }
+  })
 exports.getOne = (Model) =>
   asyncHandler(async (req, res) => {
   try {

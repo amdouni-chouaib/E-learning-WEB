@@ -9,10 +9,15 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { DisplayUserComponent } from './admin/display-user/display-user.component';
 import { CreateFormationComponent } from './admin/create-formation/create-formation.component';
 import { CreateteacherComponent } from './admin/createteacher/createteacher.component';
+import { ProfileComponent } from './profile/profile.component';
+import { DisplayteacherComponent } from './admin/displayteacher/displayteacher.component';
 
 const routes: Routes = [
   {
     path:'',component:HomeComponent
+  },
+  {
+    path:'profile/:id',component:ProfileComponent
   },
   {
     path:'about',component:AboutComponent
@@ -34,6 +39,9 @@ const routes: Routes = [
   },
   {
     path:'admincreateteacher',component:CreateteacherComponent
+  },
+  {
+    path:'admindisplayteacher',component:DisplayteacherComponent
   },
   {
     path:'**',component:NotfoundComponent

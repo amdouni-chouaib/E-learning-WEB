@@ -33,8 +33,27 @@ export class ApiconsumeService {
   createtraining(data:any):Observable<any>{
     return this.http.post<any>("http://localhost:3001/createtraining", data);
   }
+  createuser(data:any):Observable<any>{
+    return this.http.post<any>("http://localhost:3001/createuser", data);
+  }
+  getAlltraining():Observable<any>{
+    return this.http.get<any>("http://localhost:3001/getalltrainings");
+  }
+  getoneuser(id:any):Observable<any>{
+    return this.http.get<any>("http://localhost:3001/"+id);
+  }
+  updateoneuser(id:any,data:any):Observable<any>{
+    return this.http.put<any>("http://localhost:3001/"+id,data);
+  }
+
+
+  getallteacher():Observable<any>{
+    return this.http.get("http://localhost:3001/getteacher")
+  }
+
   
-
-
+  deleteoneuser(id:any):Observable<any>{
+    return this.http.delete("http://localhost:3001/"+id)
+  }
 
 }

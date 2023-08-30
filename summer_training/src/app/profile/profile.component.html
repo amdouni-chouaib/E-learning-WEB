@@ -1,0 +1,22 @@
+<form [formGroup]="myForm" (ngSubmit)="onsubmit()">
+    
+    <div style="height: 100%; height: 100%; display: flex;justify-content: center;padding-top: 8%;padding-bottom: 5%;">
+        
+        <div class="card" style="width: 60%;">
+        
+            <div class="card-body">
+              <h5 class="card-title">Profile </h5>
+              <label for="">firstname</label>
+              <input type="text" formControlName="firstname" class="form-control">
+              <label for="">Lastname</label>
+              <input type="text" formControlName="lastname" class="form-control">      
+              <label for="">Email</label>
+              <input type="email" formControlName="email" class="form-control">
+              <label for="">University</label>
+              <input type="text" formControlName="university" class="form-control"> <br>
+              <button type="submit" class="btn btn-success">Valider</button>
+            </div>
+          </div>
+        
+        </div>
+    </form>
