@@ -22,7 +22,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import * as jwt_decode from 'jwt-decode'; // Import jwt_decode
-import { ProfileComponent } from './profile/profile.component'; // Note the change in the import statement
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -44,8 +44,7 @@ import { ProfileComponent } from './profile/profile.component'; // Note the chan
     ContactComponent,
     NotfoundComponent,
     FooterComponent,
-    ProfileComponent
-  ],
+    ProfileComponent  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
