@@ -28,6 +28,7 @@ export class ProfileComponent implements OnInit {
     university :new FormControl(this.data.university,[Validators.required])
   })
   ngOnInit(): void {
+    
     this.service.getoneuser(this.route.snapshot.paramMap.get('id')).subscribe((data: any) => {
       this.data = {
         firstname: data.firstname,

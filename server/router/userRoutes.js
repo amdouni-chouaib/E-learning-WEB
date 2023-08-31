@@ -51,6 +51,8 @@ router.get('/:id', factory.getOne(user));
 
 // Update a user by ID
 router.put('/:id', factory.updateOne(user));
+// Update a user by ID
+router.put('/formation/:id', factory.updateOneF(user));
 
 // Delete a user by ID
 router.delete('/:id', factory.deleteOne(user));

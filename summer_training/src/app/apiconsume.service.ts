@@ -55,5 +55,19 @@ export class ApiconsumeService {
   deleteoneuser(id:any):Observable<any>{
     return this.http.delete("http://localhost:3001/"+id)
   }
+  deleteonetraining(id:any):Observable<any>{
+    return this.http.delete("http://localhost:3001/training/"+id)
+  }
+  getonetraining(id:any):Observable<any>{
+    return this.http.get("http://localhost:3001/training/"+id)
+  }
+  updateonetraining(id:any,data:any):Observable<any>{
+    return this.http.put("http://localhost:3001/training/"+id,data)
+  }
+
+
+  updateFormation(id:any,data:any):Observable<any>{
+    return this.http.put("http://localhost:3001/formation/"+id,data)
+  }
 
 }

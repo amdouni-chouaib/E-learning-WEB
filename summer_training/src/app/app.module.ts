@@ -23,6 +23,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import * as jwt_decode from 'jwt-decode'; // Import jwt_decode
 import { ProfileComponent } from './profile/profile.component'; // Note the change in the import statement
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,7 @@ import { ProfileComponent } from './profile/profile.component'; // Note the chan
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    
+    NgxPaginationModule
     
   ],
   providers: [],

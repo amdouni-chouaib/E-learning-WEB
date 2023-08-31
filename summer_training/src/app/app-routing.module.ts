@@ -11,6 +11,9 @@ import { CreateFormationComponent } from './admin/create-formation/create-format
 import { CreateteacherComponent } from './admin/createteacher/createteacher.component';
 import { ProfileComponent } from './profile/profile.component';
 import { DisplayteacherComponent } from './admin/displayteacher/displayteacher.component';
+import { UpdateteacherComponent } from './admin/updateteacher/updateteacher.component';
+import { DisplayFormationComponent } from './admin/display-formation/display-formation.component';
+import { UpdateFormationComponent } from './admin/update-formation/update-formation.component';
 
 const routes: Routes = [
   {
@@ -42,6 +45,15 @@ const routes: Routes = [
   },
   {
     path:'admindisplayteacher',component:DisplayteacherComponent
+  },
+  {
+    path:'admindisplayformation',component:DisplayFormationComponent
+  },
+  {
+    path:'adminupdateteacher/:id',component:UpdateteacherComponent
+  },
+  {
+    path:'adminupdateformation/:id',component:UpdateFormationComponent
   },
   {
     path:'**',component:NotfoundComponent

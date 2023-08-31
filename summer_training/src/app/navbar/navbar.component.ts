@@ -12,13 +12,17 @@ import { compileNgModule } from '@angular/compiler';
 })
 export class NavbarComponent implements OnInit  {
   userRole: string | null = null;
-
+  token:any=localStorage.getItem("token")
+  id:any=""
+  iduser:any
   constructor(private route:Router,private service:ApiconsumeService){
 }
   ngOnInit(): void {
     this.service.userRole$.subscribe((role:any)=>{
-this.userRole=role
+      this.userRole=role
     })
+    this.id=jwt_decode(this.token)
+    this.iduser="/adminupdateteacher/"+this.id.userId
   }
   
   logged(){
