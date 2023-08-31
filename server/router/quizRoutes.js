@@ -15,7 +15,6 @@ router.post('/quiz',  async (req, res) => {
             alternatives,
             formation
         })
-        console.log(question)
         return res.status(201).json(question)
     } catch (error) {
         return res.status(500).json({"error":error})
