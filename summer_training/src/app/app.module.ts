@@ -24,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
 import * as jwt_decode from 'jwt-decode'; // Import jwt_decode
 import { ProfileComponent } from './profile/profile.component'; // Note the change in the import statement
 import { NgxPaginationModule } from 'ngx-pagination';
+import { QuizformComponent } from './teacher/quizform/quizform.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ContactComponent,
     NotfoundComponent,
     FooterComponent,
-    ProfileComponent
+    ProfileComponent,
+    QuizformComponent
   ],
   imports: [
     BrowserModule,

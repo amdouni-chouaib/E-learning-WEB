@@ -14,6 +14,7 @@ import { DisplayteacherComponent } from './admin/displayteacher/displayteacher.c
 import { UpdateteacherComponent } from './admin/updateteacher/updateteacher.component';
 import { DisplayFormationComponent } from './admin/display-formation/display-formation.component';
 import { UpdateFormationComponent } from './admin/update-formation/update-formation.component';
+import { QuizformComponent } from './teacher/quizform/quizform.component';
 
 const routes: Routes = [
   {
@@ -54,6 +55,9 @@ const routes: Routes = [
   },
   {
     path:'adminupdateformation/:id',component:UpdateFormationComponent
+  },
+  {
+    path:'teacherquiz',component:QuizformComponent
   },
   {
     path:'**',component:NotfoundComponent

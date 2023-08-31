@@ -5,6 +5,7 @@ const cors = require('cors'); // Import the cors package
 const authRoutes = require('./router/authRoutes');
 const userRoutes = require('./router/userRoutes');
 const formations = require('./model/formation');
+const quiz = require('./router/quizRoutes');
 
 const formationRoutes = require('./router/formationRoutes');
 require('dotenv').config();
@@ -61,6 +62,8 @@ app.delete('/trainings', async (res) => {
     res.status(500).json({ error: ' error occurred while deleting all data' });
   }
 });
+app.use('/', quiz);
+
 app.use('/', authRoutes);
 app.use('/', userRoutes);
 app.use('/', formationRoutes);

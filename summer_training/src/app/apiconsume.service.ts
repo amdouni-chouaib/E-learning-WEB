@@ -69,5 +69,8 @@ export class ApiconsumeService {
   updateFormation(id:any,data:any):Observable<any>{
     return this.http.put("http://localhost:3001/formation/"+id,data)
   }
+  postQuizQuestions(questions: any):Observable<any> {
+    return this.http.post<any>("http://localhost:3001/quiz", questions);
+  }
 
 }
