@@ -11,7 +11,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let data of students;let index = index">
+          <tr *ngFor="let data of students| paginate: { itemsPerPage: 3, currentPage: p } ;let index = index  ">
             <th scope="row">{{index+1}}</th>
             <td>{{data.firstname}}</td>
             <td>{{data.lastname}}</td>
@@ -22,4 +22,7 @@
         
         </tbody>
       </table>
+</div>
+<div style="display: flex; justify-content: center;">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>

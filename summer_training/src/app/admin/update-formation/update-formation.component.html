@@ -1,1 +1,22 @@
-<p>update-formation works!</p>
+<form [formGroup]="myForm" (ngSubmit)="onsubmit()">
+    
+    <div style="height: 100%; height: 100%; display: flex;justify-content: center;padding-top: 8%;padding-bottom: 5%;">
+        
+        <div class="card" style="width: 60%;">
+        
+            <div class="card-body">
+              <h5 class="card-title">Update training </h5>
+              <label for="">training Name</label>
+              <input type="text" formControlName="nom" class="form-control">
+              <label for="">Begin Date</label>
+              <input type="text" formControlName="datedebut" class="form-control">
+              <label for="">End Date</label>
+              <input type="text" formControlName="datefin" class="form-control">
+              <label for="">Description</label><br>
+             <textarea formControlName="description" name="" id="" cols="30" rows="10" class="form-control"></textarea>
+              <button type="submit" class="btn btn-success">Update</button>
+            </div>
+          </div>
+        
+        </div>
+    </form>

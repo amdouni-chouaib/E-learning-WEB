@@ -1,0 +1,17 @@
+<div class="card w-60 mx-auto mt-5 p-4">
+    <form [formGroup]="myForm" (ngSubmit)="sendData()">
+        <input type="hidden" formControlName="formations">
+
+           
+            <div class="col-4">
+                <input   formControlName="pdf"  type="file" (change)="onFileSelected($event)" class="form-control m-1"  placeholder="pdf" >
+    
+            </div>
+    
+    
+    
+            <div class="col-2">
+                <button class="btn btn-outline-warning">add</button>
+            </div>
+      </form>
+    </div>

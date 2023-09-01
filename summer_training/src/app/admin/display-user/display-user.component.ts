@@ -8,6 +8,7 @@ import { ApiconsumeService } from 'src/app/apiconsume.service';
 })
 export class DisplayUserComponent implements OnInit {
   students:any[]=[]
+  p:number=1
   constructor(private service:ApiconsumeService){}
   ngOnInit(): void {
     this.service.getAllUser().subscribe((data:any)=>{

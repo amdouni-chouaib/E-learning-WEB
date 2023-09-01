@@ -23,7 +23,10 @@
           <a class="nav-link" routerLink="/adminstudent">Display Student</a>
         </li>
         <li class="nav-item active" *ngIf="userRole==='admin'">
-          <a class="nav-link" routerLink="/admincreateformation">Create Formation</a>
+          <a class="nav-link" routerLink="/admincreateformation">Create Training </a>
+        </li>
+        <li class="nav-item active" *ngIf="userRole==='admin'">
+          <a class="nav-link" routerLink="/admindisplayformation">Display Training </a>
         </li>
         <li class="nav-item active" *ngIf="userRole==='admin'">
           <a class="nav-link" routerLink="/admindisplayteacher">Display Teacher</a>
@@ -39,8 +42,13 @@
           <a class="nav-link" routerLink="/adminstudent">Display Student</a>
         </li>
         <li class="nav-item active" *ngIf="userRole==='teacher'">
-          <a class="nav-link" routerLink="/admincreateformation">Create Training</a>
+          <a class="nav-link" routerLink="/teacherquiz">Create quiz</a>
         </li>
+        <li class="nav-item active" *ngIf="userRole==='teacher'">
+          <a class="nav-link" routerLink="/teacherpdf">Add Pdf</a>
+        </li>
+
+        
         <!-- basic navbar -->
 
             <li class="nav-item active"  *ngIf="userRole===null">
@@ -72,7 +80,7 @@
             Profile
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" routerLink="/profile">Edit Profile</a>
+            <a class="dropdown-item" [routerLink]="iduser">Edit Profile</a>
             <a class="dropdown-item" (click)="logout()">Logout</a>
           </div>
         </div>
@@ -81,4 +89,3 @@
     </div>
     </div>
   </nav>  
-

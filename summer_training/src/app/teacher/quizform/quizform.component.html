@@ -1,0 +1,23 @@
+<div>
+    <h2>Add Question with Answers</h2>
+    <form [formGroup]="questionForm" (ngSubmit)="submitForm()">
+        <input type="hidden" formControlName="formation">
+      
+      <label>Question:</label>
+      <input type="text" formControlName="description">
+      
+      <div formArrayName="alternatives">
+        <div *ngFor="let option of questionForm.get('alternatives').controls; let i = index" [formGroupName]="i">
+          <label>Answer {{ i + 1 }}:</label>
+          <input type="text" formControlName="text">
+          <label>Is Correct:</label>
+          <input type="checkbox" formControlName="isCorrect">
+        </div>
+      </div>
+      
+      <button type="button" (click)="addOption()">Add Answer</button>
+  
+      <button type="submit" [disabled]="!questionForm.valid">Submit</button>
+    </form>
+  </div>
+  

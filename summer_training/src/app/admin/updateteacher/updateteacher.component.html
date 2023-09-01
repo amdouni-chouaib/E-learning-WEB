@@ -1,1 +1,25 @@
-<p>updateteacher works!</p>
+<form [formGroup]="myForm" (ngSubmit)="onsubmit()">
+    
+    <div style="height: 100%; height: 100%; display: flex;justify-content: center;padding-top: 8%;padding-bottom: 5%;">
+        
+        <div class="card" style="width: 60%;">
+        
+            <div class="card-body">
+              <h5 class="card-title">Update Teacher </h5>
+              <label for="">firstname</label>
+              <input type="text" formControlName="firstname" class="form-control">
+              <label for="">lastname</label>
+              <input type="text" formControlName="lastname" class="form-control">
+              <label for="">email</label>
+              <input type="email" formControlName="email" class="form-control">
+              <label for="">formation</label><br>
+              <select formControlName="formations" class="form-control">
+                <option>Select Training</option>
+                <option *ngFor="let data of arr" [value]="data._id">{{data.nom}}</option>
+              </select><br>
+              <button type="submit" class="btn btn-success">Update</button>
+            </div>
+          </div>
+        
+        </div>
+    </form>

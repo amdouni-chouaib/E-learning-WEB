@@ -13,7 +13,7 @@
         </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let data of teacher ;let index = index ;let i as index ">
+          <tr *ngFor="let data of teacher | paginate: { itemsPerPage: 3, currentPage: p } ;let index = index ;let i as index  ">
             <th scope="row">{{index+1}}</th>
             <td>{{data.firstname}}</td>
             <td>{{data.lastname}}</td>
@@ -22,10 +22,13 @@
             <td>{{data.university}}</td>
             <td> 
                 <button class="btn btn-danger" (click)="deleteteacher(i)">Delete</button>
-                <button class="btn btn-info">Update</button>
+                <button class="btn btn-info"  [routerLink]="['/adminupdateteacher/',i._id]">Update</button>
             </td>
         </tr>
         
         </tbody>
       </table>
+</div>
+<div style="display: flex; justify-content: center;">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>

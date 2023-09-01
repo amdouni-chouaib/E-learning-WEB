@@ -22,7 +22,10 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import * as jwt_decode from 'jwt-decode'; // Import jwt_decode
-import { ProfileComponent } from './profile/profile.component';
+import { ProfileComponent } from './profile/profile.component'; // Note the change in the import statement
+import { NgxPaginationModule } from 'ngx-pagination';
+import { QuizformComponent } from './teacher/quizform/quizform.component';
+import { PdfComponent } from './teacher/pdf/pdf.component';
 
 @NgModule({
   declarations: [
@@ -44,14 +47,17 @@ import { ProfileComponent } from './profile/profile.component';
     ContactComponent,
     NotfoundComponent,
     FooterComponent,
-    ProfileComponent  ],
+    ProfileComponent,
+    QuizformComponent,
+    PdfComponent
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    
+    NgxPaginationModule
     
   ],
   providers: [],

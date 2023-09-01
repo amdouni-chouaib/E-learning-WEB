@@ -8,6 +8,7 @@ import { ApiconsumeService } from 'src/app/apiconsume.service';
 })
 export class DisplayteacherComponent {
   teacher:any[]=[]
+  p:number=1
   constructor(private service:ApiconsumeService){}
   ngOnInit(): void {
     this.service.getallteacher().subscribe((data:any)=>{

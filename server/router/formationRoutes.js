@@ -4,7 +4,7 @@ const factory = require('../controller/factory');
 const formations = require('../model/formation');
 
 // Create a new training
-router.post('/createtraining', factory.createOne(formations));
+router.post('/createtraining', factory.createOneA(formations));
 
 // Get all trainings
 // error on this route idk why 
