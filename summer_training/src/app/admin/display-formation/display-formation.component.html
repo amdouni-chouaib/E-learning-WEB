@@ -12,7 +12,7 @@
         </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let data of formation;let index = index ;let i as index | async | paginate: { itemsPerPage: 3, currentPage: p } ">
+          <tr *ngFor="let data of formation;let index = index ;let i as index | async | paginate: { itemsPerPage: 6, currentPage: p } ">
             <th scope="row">{{index+1}}</th>
             <td>{{data.nom}}</td>
             <td>{{data.datedebut}}</td>
