@@ -16,6 +16,8 @@ import { DisplayFormationComponent } from './admin/display-formation/display-for
 import { UpdateFormationComponent } from './admin/update-formation/update-formation.component';
 import { QuizformComponent } from './teacher/quizform/quizform.component';
 import { PdfComponent } from './teacher/pdf/pdf.component';
+import { DisplaytrainingComponents } from './student/displaytraining/displaytraining.component';
+import { DisplaystudentTComponent } from './teacher/displaystudent-t/displaystudent-t.component';
 
 const routes: Routes = [
   {
@@ -62,6 +64,9 @@ const routes: Routes = [
   },
   {
     path:'teacherpdf',component:PdfComponent
+  },
+  {
+    path:'displaytrainingstudent',component:DisplaytrainingComponents
   },
   {
     path:'**',component:NotfoundComponent

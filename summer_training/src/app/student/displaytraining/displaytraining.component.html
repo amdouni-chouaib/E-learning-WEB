@@ -1,0 +1,17 @@
+<div class="card-container">
+    <div *ngFor="let data of arr;let i as index" class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          Training Name: <h1>{{data.nom}}</h1>
+        </div>
+        <div class="flip-card-back">
+          Begin Date: <p>{{data.datedebut}}</p> 
+          End Date: <p>{{data.datefin}}</p> 
+          Description: <h6>{{data.description}}</h6>
+            <button class="btn btn-primary" (click)="joining(i)">Join</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  

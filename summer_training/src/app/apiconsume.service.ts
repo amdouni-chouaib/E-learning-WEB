@@ -72,5 +72,8 @@ export class ApiconsumeService {
   postQuizQuestions(questions: any):Observable<any> {
     return this.http.post<any>("http://localhost:3001/quiz", questions);
   }
-
+  updateuserF(id:any,formations:any):Observable<any> {
+    return this.http.put<any>("http://localhost:3001/traininguser/"+id,{formations});
+  }
+  
 }
