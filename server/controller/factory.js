@@ -46,6 +46,39 @@ exports.deleteOne = (Model) =>
     }
   });
 
+  exports.updateOneUF = (Model) =>
+  asyncHandler(async (req, res) => {
+    const userId = req.params.id; 
+    const userdata= { formations } = req.body;
+  
+    try {
+      // Find the user by ID
+      const users = await Model.findByIdAndUpdate(userId ,userdata,{ new: true });
+      users.formations.push(formations)
+
+      if (!users) {
+        return res.status(404).json({ error: 'User not found' });
+      }
+      
+
+  
+      // // Update the specified fields
+      // if (firstname) users.firstname = firstname;
+      // if (lastname) users.lastname = lastname;
+      // if (email) users.email = email;
+      // if (formations) users.formations.push(formations);
+  
+      // // Save the updated user
+      // await users.save();
+      // console.log(users);
+  
+      res.status(200).json({ message: 'User updated successfully', users });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'An error occurred while updating the user' });
+    }
+  });
+
 
 
 exports.updateOne = (Model) =>
