@@ -26,6 +26,7 @@ import { ProfileComponent } from './profile/profile.component'; // Note the chan
 import { NgxPaginationModule } from 'ngx-pagination';
 import { QuizformComponent } from './teacher/quizform/quizform.component';
 import { PdfComponent } from './teacher/pdf/pdf.component';
+import { DisplaytrainingComponents } from './student/displaytraining/displaytraining.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { PdfComponent } from './teacher/pdf/pdf.component';
     FooterComponent,
     ProfileComponent,
     QuizformComponent,
-    PdfComponent
+    PdfComponent,
+    DisplaytrainingComponents
     ],
   imports: [
     BrowserModule,
