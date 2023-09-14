@@ -10,6 +10,8 @@ import { ApiconsumeService } from 'src/app/apiconsume.service';
 export class DisplayFormationComponent implements OnInit {
   constructor(private service:ApiconsumeService){}
   p:number=1
+  searchtext:any;
+
   formation:any=new Observable()
   ngOnInit(): void {
     this.service.getAlltraining().subscribe((data:any)=>{
