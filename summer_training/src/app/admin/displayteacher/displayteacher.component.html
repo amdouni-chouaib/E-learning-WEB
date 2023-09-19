@@ -1,5 +1,9 @@
 <div style="display: flex;justify-content: center;align-items: center; margin: 14%;">
-    <table class="table table-striped" >
+  <div class="col-sm-7">
+    <div class="from-outline mt-3">
+      <input type="search" [(ngModel)]="searchtext" id="form1" class="form-control" placeholder="search" aria-label="search">
+     
+  <table class="table table-striped" >
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -13,7 +17,7 @@
         </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let data of teacher | paginate: { itemsPerPage: 6, currentPage: p } ;let index = index ;let i as index  ">
+          <tr *ngFor="let data of teacher |filter:searchtext | paginate: { itemsPerPage: 6, currentPage: p } ;let index = index ;let i as index  ">
             <th scope="row">{{index+1}}</th>
             <td>{{data.firstname}}</td>
             <td>{{data.lastname}}</td>
@@ -28,7 +32,8 @@
         
         </tbody>
       </table>
-</div>
+    </div>
 <div style="display: flex; justify-content: center;">
   <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
 </div>

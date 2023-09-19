@@ -26,6 +26,7 @@ import { ProfileComponent } from './profile/profile.component'; // Note the chan
 import { NgxPaginationModule } from 'ngx-pagination';
 import { QuizformComponent } from './teacher/quizform/quizform.component';
 import { PdfComponent } from './teacher/pdf/pdf.component';
+import { FilterPipe } from './filter.pipe';
 import { DisplaytrainingComponents } from './student/displaytraining/displaytraining.component';
 
 @NgModule({
@@ -51,6 +52,7 @@ import { DisplaytrainingComponents } from './student/displaytraining/displaytrai
     ProfileComponent,
     QuizformComponent,
     PdfComponent,
+    FilterPipe,
     DisplaytrainingComponents
     ],
   imports: [
