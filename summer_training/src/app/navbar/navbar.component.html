@@ -1,25 +1,25 @@
- <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-    <a class="navbar-brand" routerLink="/"> <img src="../assets/téléchargement-removebg-preview.png" alt="img" width="40px" height="40px"></a>
+ <!-- <nav class="navbar navbar-expand-lg navbar-light bg-primary"> -->
+    <!-- <a class="navbar-brand" routerLink="/"> <img src="../assets/téléchargement-removebg-preview.png" alt="img" width="40px" height="40px"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-    </button>
+    </button> -->
     
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
+    <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto"> -->
         
         <!-- student navbar -->
         
-        <li class="nav-item active"  *ngIf="userRole==='student'">
+        <!-- <li class="nav-item active"  *ngIf="userRole==='student'">
           <a class="nav-link" routerLink="/">Display Student</a>
         </li>
         <li class="nav-item" *ngIf="userRole==='student'">
           <a class="nav-link" routerLink="/training"></a>
-        </li>
+        </li> -->
         <!-- admin navbar -->
 
 
 
-        <li class="nav-item active" *ngIf="userRole==='admin'">
+        <!-- <li class="nav-item active" *ngIf="userRole==='admin'">
           <a class="nav-link" routerLink="/adminstudent">Display Student</a>
         </li>
         <li class="nav-item active" *ngIf="userRole==='admin'">
@@ -33,12 +33,12 @@
         </li>
         <li class="nav-item active" *ngIf="userRole==='admin'">
           <a class="nav-link" routerLink="/admincreateteacher">Create Teacher</a>
-        </li>
+        </li> -->
         
 
         <!-- teacher navbar -->
 
-        <li class="nav-item active" *ngIf="userRole==='teacher'">
+        <!-- <li class="nav-item active" *ngIf="userRole==='teacher'">
           <a class="nav-link" routerLink="/adminstudent">Display Student</a>
         </li>
         <li class="nav-item active" *ngIf="userRole==='teacher'">
@@ -46,12 +46,12 @@
         </li>
         <li class="nav-item active" *ngIf="userRole==='teacher'">
           <a class="nav-link" routerLink="/teacherpdf">Add Pdf</a>
-        </li>
+        </li> -->
 
         
         <!-- basic navbar -->
 
-            <li class="nav-item active"  *ngIf="userRole===null">
+            <!-- <li class="nav-item active"  *ngIf="userRole===null">
               <a class="nav-link" routerLink="/">Home </a>
             </li>
             <li class="nav-item" *ngIf="userRole===null">
@@ -60,14 +60,128 @@
             
             <li class="nav-item" *ngIf="userRole===null">
               <a class="nav-link" routerLink="/contact">Contact Us</a>
-            </li>
-      </ul>
-      <div  >
+            </li> -->
+      <!-- </ul>
+
+      <div  > -->
+       <!-- <div>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active" *ngIf="userRole===null">
+              
+            <a class="nav-link" routerLink="/login"> <svg xmlns="http://www.w3.org/2000/svg" height="0.875em" viewBox="0 0 512 512">! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc.<path d="M352 96l64 0c17.7 0 32 14.3 32 32l0 256c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l64 0c53 0 96-43 96-96l0-256c0-53-43-96-96-96l-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32zm-9.4 182.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L242.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z"/></svg>
+               Login
+            </a>
+          </li>
+        
+        </ul>
+       </div> --> 
+       <!-- <div class="btn-group dropleft"*ngIf="userRole ==='admin' || userRole === 'student' || userRole === 'teacher'">
+        <div class="btn-group dropleft">
+          <button style="padding-right:90px ;" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Profile
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" [routerLink]="iduser">Edit Profile</a>
+            <a class="dropdown-item" (click)="logout()">Logout</a>
+          </div>
+        </div>
+       </div> -->
+<!--      
+    </div>
+    </div>
+  </nav>   -->
+
+     <!-- Navbar Start -->
+     <div class="container-fluid bg-light position-relative shadow">
+      <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
+          <!-- <a href="" class="navbar-brand font-weight-bold text-secondary" style="font-size: 50px;">
+              <i class="flaticon-043-teddy-bear"></i>
+              <span class="text-primary">KidKinder</span>
+          </a>
+          <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+              <span class="navbar-toggler-icon"></span>
+          </button> -->
+          <a class="navbar-brand" routerLink="/"> <img src="../../assets/img/tek.png" alt="img" ></a>
+          <a href="" class="navbar-brand font-weight-bold text-secondary" style="font-size: 50px;">
+            <i class="flaticon-043-teddy-bear"></i>
+            <!-- <span class="text-primary">Summer Training</span> -->
+        </a>
+
+          <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+              <div class="navbar-nav font-weight-bold mx-auto py-0">
+                <li class="nav-item active"  *ngIf="userRole===null">
+                  <a class="nav-link" routerLink="/">Home </a>
+                </li>
+
+                <li class="nav-item" *ngIf="userRole===null">
+                  <a class="nav-link" routerLink="/about">About Us</a>
+                </li>
+                
+                <li class="nav-item" *ngIf="userRole===null">
+                  <a class="nav-link" routerLink="/contact">Contact Us</a>
+                </li>
+                    <!-- student navbar -->
+                          
+                    <li class="nav-item active"  *ngIf="userRole==='student'">
+                      <a class="nav-link" routerLink="/">Display Student</a>
+                    </li>
+                    <li class="nav-item" *ngIf="userRole==='student'">
+                      <a class="nav-link" routerLink="/training"></a>
+                    </li>
+
+
+                                <!-- teacher navbar -->
+
+                      <li class="nav-item active" *ngIf="userRole==='teacher'">
+                        <a class="nav-link" routerLink="/adminstudent">Display Student</a>
+                      </li>
+                      <li class="nav-item active" *ngIf="userRole==='teacher'">
+                        <a class="nav-link" routerLink="/teacherquiz">Create quiz</a>
+                      </li>
+                      <li class="nav-item active" *ngIf="userRole==='teacher'">
+                        <a class="nav-link" routerLink="/teacherpdf">Add Pdf</a>
+                      </li>
+
+                       <!-- admin navbar -->
+
+
+
+                        <li class="nav-item active" *ngIf="userRole==='admin'">
+                          <a class="nav-link" routerLink="/adminstudent">Display Student</a>
+                        </li>
+                        <li class="nav-item active" *ngIf="userRole==='admin'">
+                          <a class="nav-link" routerLink="/admincreateformation">Create Training </a>
+                        </li>
+                        <li class="nav-item active" *ngIf="userRole==='admin'">
+                          <a class="nav-link" routerLink="/admindisplayformation">Display Training </a>
+                        </li>
+                        <li class="nav-item active" *ngIf="userRole==='admin'">
+                          <a class="nav-link" routerLink="/admindisplayteacher">Display Teacher</a>
+                        </li>
+                        <li class="nav-item active" *ngIf="userRole==='admin'">
+                          <a class="nav-link" routerLink="/admincreateteacher">Create Teacher</a>
+                        </li>
+<!--                 
+                  <a href="class.html" class="nav-item nav-link">Classes</a>
+                  <a href="team.html" class="nav-item nav-link">Teachers</a>
+                  <a href="gallery.html" class="nav-item nav-link">Gallery</a> -->
+
+
+                  <!-- <div class="nav-item dropdown">
+                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                      <div class="dropdown-menu rounded-0 m-0">
+                          <a href="blog.html" class="dropdown-item">Blog Grid</a>
+                          <a href="single.html" class="dropdown-item">Blog Detail</a>
+                      </div>
+                  </div> -->
+              </div>
+              <!-- <a href="" class="btn btn-primary px-4">Join Class</a> -->
+         <div  >
        <div>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active" *ngIf="userRole===null">
               
-            <a class="nav-link" routerLink="/login"> <svg xmlns="http://www.w3.org/2000/svg" height="0.875em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M352 96l64 0c17.7 0 32 14.3 32 32l0 256c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l64 0c53 0 96-43 96-96l0-256c0-53-43-96-96-96l-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32zm-9.4 182.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L242.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z"/></svg>
+            <a class="nav-link" routerLink="/login"> <svg xmlns="http://www.w3.org/2000/svg" height="0.875em" viewBox="0 0 512 512"><path d="M352 96l64 0c17.7 0 32 14.3 32 32l0 256c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l64 0c53 0 96-43 96-96l0-256c0-53-43-96-96-96l-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32zm-9.4 182.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L242.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z"/></svg>
                Login
             </a>
           </li>
@@ -87,5 +201,7 @@
        </div>
      
     </div>
-    </div>
-  </nav>  
+          </div>
+      </nav>
+  </div>
+  <!-- Navbar End -->
