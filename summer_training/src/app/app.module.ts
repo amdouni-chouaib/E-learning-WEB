@@ -52,7 +52,8 @@ import { DisplaytrainingComponents } from './student/displaytraining/displaytrai
     ProfileComponent,
     QuizformComponent,
     PdfComponent,
-    FilterPipe
+    FilterPipe,
+    DisplaytrainingComponents
     ],
   imports: [
     BrowserModule,

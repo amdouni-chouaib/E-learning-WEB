@@ -20,7 +20,10 @@ export class DisplaytrainingComponents implements OnInit{
     this.id=this.decodetoken.userId
     this.service.getAlltraining().subscribe((data:any)=>{
       this.arr=data
-    })
+      console.log(this.arr)
+    },((error:any)=>{
+      console.log(error)
+    }))
   
   }
 
