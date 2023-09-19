@@ -22,7 +22,7 @@ export class NavbarComponent implements OnInit  {
       this.userRole=role
     })
     this.id=jwt_decode(this.token)
-    this.iduser="/adminupdateteacher/"+this.id.userId
+    this.iduser="/profile/"+this.id.userId
   }
   
   logged(){

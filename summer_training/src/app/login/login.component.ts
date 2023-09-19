@@ -24,10 +24,19 @@ export class LoginComponent {
       (data: any) => {
         // Assuming the response contains a 'role' property
         const userRole = data.role;
+        if(userRole==="admin"){
+          this.route.navigate(["/adminstudent"])
+        }
+        if(userRole==="teacher"){
+          this.route.navigate(["/teacherquiz"])
+        }
+        if(userRole==="student"){
+          this.route.navigate(["/displaytrainingstudent"])
+        }
         this.service.updateUserRole(userRole); 
         localStorage.setItem("token",data.token)
         this.jwt = jwt_decode(data.token)
-        this.route.navigate(["/profile/"+this.jwt.userId])
+        // this.route.navigate(["/profile/"+this.jwt.userId])
       },
       (error) => {
         console.error('Login failed', error);
