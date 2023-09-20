@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
+  error=""
   constructor(private service:ApiconsumeService,private route:Router){}
 
 myForm = new FormGroup({
@@ -25,6 +26,8 @@ onSubmit(){
 this.service.signup(this.myForm.value).subscribe((data:any)=>{
   alert(data.message)
   this.route.navigate(["/login"])
+},(error:any)=>{
+  this.error=error.error.error
 })
 }
 }

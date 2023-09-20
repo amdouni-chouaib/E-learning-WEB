@@ -1,4 +1,15 @@
 <div class="card w-60 mx-auto mt-5 p-4">
+    <div *ngIf="error!=''">
+        <div class="alert alert-danger" role="alert">
+         {{error}}
+        </div>
+      </div>
+      <div *ngIf="success!=''">
+        <div class="alert alert-success" role="alert">
+         {{success}}
+        </div>
+      </div>
+      <br><br>
     <form [formGroup]="myForm" (ngSubmit)="sendData()">
         <input type="hidden" formControlName="formations">
 

@@ -32,7 +32,7 @@ router.post("/uploadpdf", upload.any("pdfFile"), (req, res) => {
           res.status(200).send(savedPdf);
         })
         .catch((err) => {
-          res.status(400).send(err);
+          res.status(400).json({error:"Error While Adding the file"});
         });
 
         const token = jwt.sign(userdata, 'your-secret-key', { expiresIn: '1h' });

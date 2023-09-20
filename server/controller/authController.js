@@ -22,8 +22,10 @@ const signup = async (req, res) => {
 
     res.status(201).json({ message: 'User registered successfully' });
   } catch (error) {
-    res.status(500).json({ error: 'An error occurred' });
-  }
+    
+      // Handle other errors
+      res.status(500).json({ error: 'invalid Form Data' });
+      }
 };
 const login = async (req, res) => {
     try {
@@ -31,12 +33,12 @@ const login = async (req, res) => {
   
       const user = await User.findOne({ email });
       if (!user) {
-        return res.status(401).json({ error: 'Invalid email or password' });
+        return res.status(401).json({ error: 'Invalid Email ' });
       }
   
       const isPasswordValid = await bcrypt.compare(password, user.password);
       if (!isPasswordValid) {
-        return res.status(401).json({ error: 'Invalid email or password' });
+        return res.status(401).json({ error: 'Invalid Password' });
       }
   
       const userdata = {

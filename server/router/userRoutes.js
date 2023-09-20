@@ -8,7 +8,6 @@ const User = require('../model/user');
 router.post('/createuser', async (req, res) => {
     try {
       const { firstname, lastname, email, password, university , role,formation } = req.body;
-      console.log(req.body)
   
       // Hash the password before saving it
       const hashedPassword = await bcrypt.hash(password, 10); // 10 is the number of salt rounds
@@ -29,7 +28,7 @@ router.post('/createuser', async (req, res) => {
   
       res.status(201).json(savedUser);
     } catch (error) {
-      res.status(500).json({ error: 'An error occurred while creating the user.' });
+      res.status(500).json({ error: 'Error While Inserring Data check Again please .' });
     }
   });
 //get user role teacher 

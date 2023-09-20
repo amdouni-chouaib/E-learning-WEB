@@ -10,6 +10,8 @@ import { ApiconsumeService } from 'src/app/apiconsume.service';
 export class CreateteacherComponent implements OnInit {
   constructor(private service:ApiconsumeService){}
   arr:any[]=[]
+  error=""
+  success=""
   ngOnInit(): void {
     this.service.getAlltraining().subscribe((data:any)=>{
       this.arr=data
@@ -32,6 +34,9 @@ export class CreateteacherComponent implements OnInit {
     this.service.createuser(this.myForm.value).subscribe((data)=>{
       alert("done")
       console.log("formation creer avec success",data)
+      this.success="Teacher Added Successfully"
+    },(error:any)=>{
+      this.error=error.error.error
     })
 console.log(this.myForm.value)
   

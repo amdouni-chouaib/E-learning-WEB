@@ -8,6 +8,8 @@ import { ApiconsumeService } from 'src/app/apiconsume.service';
   styleUrls: ['./create-formation.component.css']
 })
 export class CreateFormationComponent {
+  error=""
+  success=""
 constructor(private service:ApiconsumeService){}
 
 myForm = new FormGroup({
@@ -20,8 +22,10 @@ myForm = new FormGroup({
 
 onsubmit(){
   this.service.createtraining(this.myForm.value).subscribe((data)=>{
-    alert("done")
     console.log("formation creer avec success",data)
+    this.success="Training Successfully Added"
+  },(error:any)=>{
+    this.error=error.error.error
   })
 
 }

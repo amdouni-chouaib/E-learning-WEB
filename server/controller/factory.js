@@ -97,8 +97,12 @@ exports.updateOne = (Model) =>
   });
   exports.createOneA = (Model) =>
   asyncHandler(async (req, res) => {
+   try {
     const newDoc = await Model.create(req.body);
     res.status(201).json({ data: newDoc });
+   } catch (error) {
+    res.status(500).json({error:"Failed To add check your data again"})
+   }
   });
   exports.createOne = (Model) =>
   asyncHandler(async (req, res) => {

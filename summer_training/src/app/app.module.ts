@@ -28,6 +28,11 @@ import { QuizformComponent } from './teacher/quizform/quizform.component';
 import { PdfComponent } from './teacher/pdf/pdf.component';
 import { FilterPipe } from './filter.pipe';
 import { DisplaytrainingComponents } from './student/displaytraining/displaytraining.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { provideAnimations } from '@angular/platform-browser/animations';
+
+import { provideToastr } from 'ngx-toastr';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -53,7 +58,8 @@ import { DisplaytrainingComponents } from './student/displaytraining/displaytrai
     QuizformComponent,
     PdfComponent,
     FilterPipe,
-    DisplaytrainingComponents
+    DisplaytrainingComponents,
+    
     ],
   imports: [
     BrowserModule,
@@ -61,10 +67,20 @@ import { DisplaytrainingComponents } from './student/displaytraining/displaytrai
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot({
+      positionClass: 'toast-top-center', // Set the position to top-right
+      preventDuplicates: true,
+    }),
+    
+
     
   ],
-  providers: [],
+  providers: [
+    provideAnimations(), // required animations providers
+    provideToastr(), // Toastr providers
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

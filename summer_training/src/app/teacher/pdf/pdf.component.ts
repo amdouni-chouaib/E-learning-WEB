@@ -10,6 +10,8 @@ import { ApiconsumeService } from 'src/app/apiconsume.service';
   styleUrls: ['./pdf.component.css']
 })
 export class PdfComponent implements OnInit{
+  error=""
+  success=""
   questionForm: any;
   formation: any;
   token: any;
@@ -62,8 +64,9 @@ export class PdfComponent implements OnInit{
 
  this._data.uploadpdf(formData).subscribe((data:any)=>{
   console.log(data);
+  this.success="File Uploaded Successfully"
  },(error:any)=>{
-  console.log(error);
+  this.error=error.error.error
  }) 
 }
  
