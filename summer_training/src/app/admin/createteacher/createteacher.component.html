@@ -1,28 +1,58 @@
 <form [formGroup]="myForm" (ngSubmit)="onsubmit()">
     
-    <div style="height: 100%; height: 100%; display: flex;justify-content: center;padding-top: 2%;padding-bottom: 5%;">
+    <div style="height: 100%; height: 100%; display: flex;justify-content: center;padding-top: 2%;padding-bottom: 5%; margin-top: 2%;">
         
         <div class="card" style="width: 60%;">
         
             <div class="card-body">
               <h5 class="card-title">Create Teacher </h5>
               <label for="">firstname</label>
+              <div>
               <input type="text" formControlName="firstname" class="form-control">
+              <span *ngIf="!myForm.get('firstname')?.valid && myForm.get('firstname')?.touched"
+              class="help-block red">Please enter a valid firstname </span>
+            </div>
               <label for="">lastname</label>
+              <div>
               <input type="text" formControlName="lastname" class="form-control">
+              <span *ngIf="!myForm.get('lastname')?.valid && myForm.get('lastname')?.touched"
+              class="help-block red">Please enter a valid lastname </span>
+            </div>
               <label for="">email</label>
+              <div>
               <input type="email" formControlName="email" class="form-control">
+              <span *ngIf="!myForm.get('email')?.valid && myForm.get('email')?.touched"
+              class="help-block red">Please enter a valid email </span>
+            </div>
               <label for="">password</label>
-              <input type="password" formControlName="password" class="form-control">
+              <div>
+
+                <input type="password" formControlName="password" class="form-control">
+                <span *ngIf="!myForm.get('password')?.valid && myForm.get('password')?.touched"
+              class="help-block red">Password must be at least 6 characters </span>
+              </div>
               <label for="">University</label>
+              <div>
               <input type="text" formControlName="university" class="form-control">
+              <span *ngIf="!myForm.get('university')?.valid && myForm.get('university')?.touched"
+              class="help-block red">Please enter a valid university name</span>
+            </div>
               <label for="">role</label>
-              <input type="text" formControlName="role" class="form-control"  >
+              <div>
+                <input type="text" formControlName="role" class="form-control"  >
+                <span *ngIf="!myForm.get('role')?.valid && myForm.get('role')?.touched"
+                class="help-block red">Please enter a valid user role</span>
+              </div>
               <label for="">formation</label><br>
+              <div>
               <select formControlName="formation" class="form-control">
                 <option>Select Training</option>
                 <option *ngFor="let data of arr" [value]="data._id">{{data.nom}}</option>
-              </select><br>
+              </select>
+              <span *ngIf="!myForm.get('formation')?.valid && myForm.get('formation')?.touched"
+                class="help-block red">Please enter a valid formation</span>
+              </div>
+              <br>
               <button type="submit" class="btn btn-success">Valider</button>
             </div>
           </div>

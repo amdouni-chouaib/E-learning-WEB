@@ -20,7 +20,7 @@ export class CreateteacherComponent implements OnInit {
     firstname :new FormControl("",[Validators.required]),
     lastname :new FormControl("",[Validators.required]),
     email :new FormControl("",[Validators.required,Validators.email]),
-    password :new FormControl("",[Validators.required]),
+    password: new FormControl('', [Validators.required,Validators.minLength(6)]),
     university :new FormControl("tek-up",[Validators.required]),
     role :new FormControl("teacher",[Validators.required]),
     formation :new FormControl("",[Validators.required]),
