@@ -25,6 +25,8 @@
                    <label class="form-label" for="form3Example3">Firstname</label>
                  <input formControlName="firstname" type="text" id="form3Example3" class="form-control form-control-lg"
                    placeholder="Enter firstname " />
+                   <span *ngIf="!myForm.get('firstname')?.valid && myForm.get('firstname')?.touched"
+                class="help-block red">Please enter your firstname </span>
                    </div>
            
                <!-- Lastname input -->
@@ -32,6 +34,8 @@
                    <label class="form-label" for="form3Example4">Lastname</label>
                  <input formControlName="lastname" type="text" id="form3Example4" class="form-control form-control-lg"
                    placeholder="Enter Lastname" />
+                   <span *ngIf="!myForm.get('lastname')?.valid && myForm.get('lastname')?.touched"
+                class="help-block red">Please enter your lastname </span>
                  </div>
            
                    <!-- Email input -->
@@ -39,6 +43,8 @@
                        <label class="form-label" for="form3Example3">Email address</label>
                      <input formControlName="email" type="email" id="form3Example3" class="form-control form-control-lg"
                        placeholder="Enter email address" />
+                       <span *ngIf="!myForm.get('email')?.valid && myForm.get('email')?.touched"
+                class="help-block red">Please enter a valid email </span>
                    </div>
            
                    <!-- Password input -->
@@ -46,6 +52,8 @@
                        <label class="form-label" for="form3Example4">Password</label>
                      <input formControlName="password" type="password" id="form3Example4" class="form-control form-control-lg"
                        placeholder="Enter password" />
+                       <span *ngIf="!myForm.get('password')?.valid && myForm.get('password')?.touched"
+                class="help-block red">Password must be at least 6 characters</span>
                    </div>
            
              
@@ -54,6 +62,8 @@
                            <label class="form-label" for="form3Example3">University name</label>
                          <input formControlName="university" type="email" id="form3Example3" class="form-control form-control-lg"
                            placeholder="Enter University" />
+                           <span *ngIf="!myForm.get('university')?.valid && myForm.get('university')?.touched"
+                class="help-block red">Please enter your university name</span>
                        </div>
              
                        <!-- level Study input -->
@@ -61,6 +71,8 @@
                            <label class="form-label" for="form3Example4">Study Level</label>
                          <input formControlName="level" type="text" id="form3Example4" class="form-control form-control-lg"
                            placeholder="Enter Study level" />
+                           <span *ngIf="!myForm.get('level')?.valid && myForm.get('level')?.touched"
+                class="help-block red">Please enter your study level</span>
                        </div>
              
                   

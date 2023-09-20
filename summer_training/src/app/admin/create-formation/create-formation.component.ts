@@ -10,10 +10,12 @@ import { ApiconsumeService } from 'src/app/apiconsume.service';
 export class CreateFormationComponent {
   error=""
   success=""
+  
 constructor(private service:ApiconsumeService){}
 
 myForm = new FormGroup({
   nom :new FormControl("",[Validators.required]),
+  classroom :new FormControl("",[Validators.required]),
   datedebut :new FormControl("",[Validators.required]),
   datefin :new FormControl("",[Validators.required]),
   description :new FormControl("",[Validators.required])
