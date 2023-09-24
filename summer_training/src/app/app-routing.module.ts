@@ -14,10 +14,13 @@ import { DisplayteacherComponent } from './admin/displayteacher/displayteacher.c
 import { UpdateteacherComponent } from './admin/updateteacher/updateteacher.component';
 import { DisplayFormationComponent } from './admin/display-formation/display-formation.component';
 import { UpdateFormationComponent } from './admin/update-formation/update-formation.component';
+import { DashbordadminComponent } from './admin/dashbordadmin/dashbordadmin.component';
+
 import { QuizformComponent } from './teacher/quizform/quizform.component';
 import { PdfComponent } from './teacher/pdf/pdf.component';
 import { DisplaytrainingComponents } from './student/displaytraining/displaytraining.component';
 import { DisplaystudentTComponent } from './teacher/displaystudent-t/displaystudent-t.component';
+import { DashbordTeacherComponent } from './teacher/dashbord-teacher/dashbord-teacher.component';
 
 const routes: Routes = [
   {
@@ -69,8 +72,15 @@ const routes: Routes = [
     path:'displaytrainingstudent',component:DisplaytrainingComponents
   },
   {
+    path:'dashbordadmin',component:DashbordadminComponent
+  },
+  {
+    path:'dashbordteacher',component:DashbordTeacherComponent
+  },
+  {
     path:'**',component:NotfoundComponent
   },
+
 ];
 
 @NgModule({

@@ -1,17 +1,82 @@
-<div class="card-container">
-    <div *ngFor="let data of arr;let i as index" class="flip-card">
-      <div  class="flip-card-inner">
-        <div class="flip-card-front">
-          Training Name: <h1>{{data.nom}}</h1>
-        </div>
-        <div class="flip-card-back">
-          Begin Date: <p>{{data.datedebut}}</p> 
-          End Date: <p>{{data.datefin}}</p> 
-          Description: <h6>{{data.description}}</h6>
-            <button class="btn btn-primary" (click)="joining(i)">Join</button>
-        </div>
-      </div>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
 
-  </div>
+<head>
+    <meta charset="utf-8">
+    <title>KidKinder - Kindergarten Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+
+</head>
+
+<body>
   
+
+
+
+
+    <!-- Class Start -->
+    <div class="container-fluid pt-5">
+        <div class="container">
+            <div class="text-center pb-2">
+                <p class="section-title px-5"><span class="px-2">Find your Course here</span></p>
+                <h1 class="mb-4">Our Latest Certification</h1>
+            </div>
+            <div class="row">
+                <div *ngFor="let data of arr;let i as index" class="col-lg-4 mb-5">
+                    <div class="card border-0 bg-light shadow-sm pb-2">
+                        <img class="card-img-top mb-2" src="../../../assets/img/oca.jpg" alt="">
+                        <div class="card-body text-center">
+                            <h4 class="card-title">{{data.nom}}</h4>
+                            <p class="card-text">{{data.description}}</p>
+                        </div>
+                        <div class="card-footer bg-transparent py-4 px-5">
+                           
+                           
+                            <div class="row border-bottom">
+                                <div class="col-6 py-1 text-right border-right"><i class="far fa-calendar text-primary "style="margin-right: 10px;"></i><strong>Start  Class Date </strong></div>
+                                <div class="col-6 py-1">{{data.datedebut}}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 py-1 text-right border-right"><i class="far fa-calendar text-primary"style="margin-right: 10px;"></i><strong>End  Class Date</strong></div>
+                                <div class="col-6 py-1">{{data.datefin}}</div>
+                            </div>
+                        </div>
+                        <a  (click)="joining(i)" class="btn btn-primary px-4 mx-auto mb-4">Join Now</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- Class End -->
+
+
+    
+
+
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary p-3 back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

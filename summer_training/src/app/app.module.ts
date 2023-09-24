@@ -28,6 +28,9 @@ import { QuizformComponent } from './teacher/quizform/quizform.component';
 import { PdfComponent } from './teacher/pdf/pdf.component';
 import { FilterPipe } from './filter.pipe';
 import { DisplaytrainingComponents } from './student/displaytraining/displaytraining.component';
+import { DashbordadminComponent } from './admin/dashbordadmin/dashbordadmin.component';
+import { SidebaradminComponent } from './admin/sidebaradmin/sidebaradmin.component';
+import { DashbordTeacherComponent } from './teacher/dashbord-teacher/dashbord-teacher.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +56,10 @@ import { DisplaytrainingComponents } from './student/displaytraining/displaytrai
     QuizformComponent,
     PdfComponent,
     FilterPipe,
-    DisplaytrainingComponents
+    DisplaytrainingComponents,
+    DashbordadminComponent,
+    SidebaradminComponent,
+    DashbordTeacherComponent
     ],
   imports: [
     BrowserModule,

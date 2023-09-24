@@ -1,38 +1,39 @@
-<div style="display: flex;justify-content: center;align-items: center; margin-top: 2%;">
-  
-  <div class="col-sm-7">
-    <div class="from-outline mt-3">
-      <input type="search" [(ngModel)]="searchtext" id="form1" class="form-control" placeholder="search" aria-label="search">
-     <table class="table table-striped" >
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Training Name</th>
-            <th scope="col">Begin Date</th>
-            <th scope="col">End Date</th>
-            <th scope="col">Description </th>
-            <th scope="col">Action</th>
-
-        </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let data of formation |filter:searchtext;let index = index ;let i as index | async | paginate: { itemsPerPage: 6, currentPage: p } ">
-            <th scope="row">{{index+1}}</th>
-            <td>{{data.nom}}</td>
-            <td>{{data.datedebut}}</td>
-            <td>{{data.datefin}}</td>
-            <td>{{data.description}}</td>
-            <td> 
-                <button class="btn btn-danger" (click)="deleteteacher(i)">Delete</button>
-                <button class="btn btn-info"  [routerLink]="['/adminupdateformation/',i._id]">Update</button>
-            </td>
+<div>
+    <div class="col-sm-7">
+        <div class="from-outline mt-3">
+          <input type="search" [(ngModel)]="searchtext" id="form1" class="form-control" placeholder="search" aria-label="search">
+         <table class="table table-striped" >
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Training Name</th>
+                <th scope="col">Begin Date</th>
+                <th scope="col">End Date</th>
+                <th scope="col">Description </th>
+                <th scope="col">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let data of formation |filter:searchtext;let index = index ;let i as index | async | paginate: { itemsPerPage: 6, currentPage: p } ">
+                <th scope="row">{{index+1}}</th>
+                <td>{{data.nom}}</td>
+                <td>{{data.datedebut}}</td>
+                <td>{{data.datefin}}</td>
+                <td>{{data.description}}</td>
+                <td> 
+                    <button class="btn btn-danger" (click)="deleteteacher(i)">Delete</button>
+                    <button class="btn btn-info"  [routerLink]="['/adminupdateformation/',i._id]">Update</button>
+                </td>
+                
+            </tr>
             
-        </tr>
-        
-     </tbody>
-      </table>
-        
-  </div>
-<div style="display: flex; justify-content: center;">
-    <pagination-controls (pageChange)="p = $event"></pagination-controls>
-  </div>
+         </tbody>
+          </table>
+            
+      </div>
+    <div style="display: flex; justify-content: center;">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
+    </div>
+
+</div>

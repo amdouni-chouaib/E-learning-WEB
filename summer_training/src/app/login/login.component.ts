@@ -25,10 +25,12 @@ export class LoginComponent {
         // Assuming the response contains a 'role' property
         const userRole = data.role;
         if(userRole==="admin"){
-          this.route.navigate(["/adminstudent"])
+          // this.route.navigate(["/adminstudent"])
+          this.route.navigate(["/dashbordadmin"])
+
         }
         if(userRole==="teacher"){
-          this.route.navigate(["/teacherquiz"])
+          this.route.navigate(["/dashbordteacher"])
         }
         if(userRole==="student"){
           this.route.navigate(["/displaytrainingstudent"])

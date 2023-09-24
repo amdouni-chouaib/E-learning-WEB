@@ -1,35 +1,37 @@
-<div style="display: flex;justify-content: center;align-items: center; margin: 14%;">
-  <div class="col-sm-7">
-  <div class="from-outline mt-3">
-    <input type="search" [(ngModel)]="searchtext" id="form1" class="form-control" placeholder="search" aria-label="search">
-  
-  </div> 
-  <table class="table table-striped" >
 
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Firstname</th>
-            <th scope="col">Lastname</th>
-            <th scope="col">email</th>
-            <th scope="col">Study level</th>
-            <th scope="col">University</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let data of students|filter:searchtext| paginate: { itemsPerPage: 6, currentPage: p } ;let index = index  ">
-            <th scope="row">{{index+1}}</th>
-            <td>{{data.firstname}}</td>
-            <td>{{data.lastname}}</td>
-            <td>{{data.email}}</td>
-            <td>{{data.level}}</td>
-            <td>{{data.university}}</td>
-          </tr>
-        
-        </tbody>
-      </table>
-<div style="display: flex; justify-content: center;">
-  <pagination-controls (pageChange)="p = $event"></pagination-controls>
-</div>
+
+<div >
+  <div >
+      <div class="col-sm-7">
+          <div class="from-outline mt-3">
+            <input type="search" [(ngModel)]="searchtext" id="form1" class="form-control" placeholder="search" aria-label="search">
+          </div> 
+          <table class="table table-striped" >
+              <thead>
+                <tr>
+                  <th scope="col ">#</th>
+                  <th scope="col">Firstname</th>
+                  <th scope="col">Lastname</th>
+                  <th scope="col">email</th>
+                  <th scope="col">Study level</th>
+                  <th scope="col">University</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let data of students|filter:searchtext| paginate: { itemsPerPage: 6, currentPage: p } ;let index = index  ">
+                  <th scope="row">{{index+1}}</th>
+                  <td>{{data.firstname}}</td>
+                  <td>{{data.lastname}}</td>
+                  <td>{{data.email}}</td>
+                  <td>{{data.level}}</td>
+                  <td>{{data.university}}</td>
+                </tr>
+              
+              </tbody>
+          </table>
+          <div style="display: flex; justify-content: center;">
+              <pagination-controls (pageChange)="p = $event"></pagination-controls>
+          </div>
+      </div>
   </div>
 </div>

@@ -1,39 +1,45 @@
-<div style="display: flex;justify-content: center;align-items: center; margin: 14%;">
-  <div class="col-sm-7">
-    <div class="from-outline mt-3">
-      <input type="search" [(ngModel)]="searchtext" id="form1" class="form-control" placeholder="search" aria-label="search">
-     
-  <table class="table table-striped" >
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Firstname</th>
-            <th scope="col">Lastname</th>
-            <th scope="col">email</th>
-            <th scope="col">Training </th>
-            <th scope="col">University</th>
-            <th scope="col">Action</th>
+<div style ='display: flex'>
 
-        </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let data of teacher |filter:searchtext | paginate: { itemsPerPage: 6, currentPage: p } ;let index = index ;let i as index  ">
-            <th scope="row">{{index+1}}</th>
-            <td>{{data.firstname}}</td>
-            <td>{{data.lastname}}</td>
-            <td>{{data.email}}</td>
-            <td *ngFor="let data of data.formations">{{data.nom}}</td>
-            <td>{{data.university}}</td>
-            <td> 
-                <button class="btn btn-danger" (click)="deleteteacher(i)">Delete</button>
-                <button class="btn btn-info"  [routerLink]="['/adminupdateteacher/',i._id]">Update</button>
-            </td>
-        </tr>
-        
-        </tbody>
-      </table>
-    </div>
-<div style="display: flex; justify-content: center;">
-  <pagination-controls (pageChange)="p = $event"></pagination-controls>
-</div>
-</div>
+  <div  >
+    <div class="col-sm-7">
+      <div class="from-outline mt-3">
+        <input type="search" [(ngModel)]="searchtext" id="form1" class="form-control" placeholder="search" aria-label="search">
+       
+    <table class="table table-striped" >
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Firstname</th>
+              <th scope="col">Lastname</th>
+              <th scope="col">email</th>
+              <th scope="col">Training </th>
+              <th scope="col">University</th>
+              <th scope="col">Action</th>
+  
+          </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of teacher |filter:searchtext | paginate: { itemsPerPage: 6, currentPage: p } ;let index = index ;let i as index  ">
+              <th scope="row">{{index+1}}</th>
+              <td>{{data.firstname}}</td>
+              <td>{{data.lastname}}</td>
+              <td>{{data.email}}</td>
+              <td *ngFor="let data of data.formations">{{data.nom}}</td>
+              <td>{{data.university}}</td>
+              <td> 
+                  <button class="btn btn-danger" (click)="deleteteacher(i)">Delete</button>
+                  <button class="btn btn-info"  [routerLink]="['/adminupdateteacher/',i._id]">Update</button>
+              </td>
+          </tr>
+          
+          </tbody>
+        </table>
+      </div>
+  <div style="display: flex; justify-content: center;">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+  </div>
+  </div>
+  </div>
+
+
