@@ -30,9 +30,11 @@ import { FilterPipe } from './filter.pipe';
 import { DisplaytrainingComponents } from './student/displaytraining/displaytraining.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideAnimations } from '@angular/platform-browser/animations';
+import { CdTimerModule } from 'angular-cd-timer';
 
 import { provideToastr } from 'ngx-toastr';
 import { ToastrModule } from 'ngx-toastr';
+import { TestquizComponent } from './testquiz/testquiz.component';
 
 @NgModule({
   declarations: [
@@ -59,11 +61,13 @@ import { ToastrModule } from 'ngx-toastr';
     PdfComponent,
     FilterPipe,
     DisplaytrainingComponents,
+    TestquizComponent,
     
     ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CdTimerModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,

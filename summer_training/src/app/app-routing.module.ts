@@ -18,6 +18,7 @@ import { QuizformComponent } from './teacher/quizform/quizform.component';
 import { PdfComponent } from './teacher/pdf/pdf.component';
 import { DisplaytrainingComponents } from './student/displaytraining/displaytraining.component';
 import { DisplaystudentTComponent } from './teacher/displaystudent-t/displaystudent-t.component';
+import { TestquizComponent } from './testquiz/testquiz.component';
 
 const routes: Routes = [
   {
@@ -67,6 +68,9 @@ const routes: Routes = [
   },
   {
     path:'displaytrainingstudent',component:DisplaytrainingComponents
+  },
+  {
+    path:'test',component:TestquizComponent
   },
   {
     path:'**',component:NotfoundComponent
