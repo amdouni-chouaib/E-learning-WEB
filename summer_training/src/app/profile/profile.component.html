@@ -7,13 +7,29 @@
             <div class="card-body">
               <h5 class="card-title">Profile </h5>
               <label for="">firstname</label>
+              <div>
               <input type="text" formControlName="firstname" class="form-control">
+              <span *ngIf="!myForm.get('firstname')?.valid && myForm.get('firstname')?.touched"
+                class="help-block red">Please enter a valid firstname</span>
+              </div>
               <label for="">Lastname</label>
-              <input type="text" formControlName="lastname" class="form-control">      
+              <div>
+              <input type="text" formControlName="lastname" class="form-control"> 
+              <span *ngIf="!myForm.get('lastname')?.valid && myForm.get('lastname')?.touched"
+              class="help-block red">Please enter a valid lastname</span>
+            </div>
               <label for="">Email</label>
+              <div>
               <input type="email" formControlName="email" class="form-control">
+              <span *ngIf="!myForm.get('email')?.valid && myForm.get('email')?.touched"
+              class="help-block red">Please enter a valid email</span></div>
               <label for="">University</label>
-              <input type="text" formControlName="university" class="form-control"> <br>
+              <div>
+              <input type="text" formControlName="university" class="form-control">
+              <span *ngIf="!myForm.get('university')?.valid && myForm.get('university')?.touched"
+              class="help-block red">Please enter a valid university name</span>
+            </div>
+               <br>
               <button type="submit" class="btn btn-success">Valider</button>
             </div>
           </div>

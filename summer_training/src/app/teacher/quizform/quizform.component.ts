@@ -15,6 +15,8 @@ export class QuizformComponent implements OnInit {
   token: any;
   decodedtoken: any;
   id: any;
+  error=""
+  success=""
 
   constructor(private formBuilder: FormBuilder, private quizService: ApiconsumeService) { }
 
@@ -60,9 +62,11 @@ export class QuizformComponent implements OnInit {
         .subscribe(
           (response) => {
             console.log('Question added:', response);
+            this.success='Question Added Successfully'
             this.questionForm.reset();
           },
           (error) => {
+            this.error=error.error.error
             console.error('Error adding question:', error);
           }
       );

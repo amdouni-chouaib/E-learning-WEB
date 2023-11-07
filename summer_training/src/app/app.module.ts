@@ -28,11 +28,21 @@ import { QuizformComponent } from './teacher/quizform/quizform.component';
 import { PdfComponent } from './teacher/pdf/pdf.component';
 import { FilterPipe } from './filter.pipe';
 import { DisplaytrainingComponents } from './student/displaytraining/displaytraining.component';
+<<<<<<< HEAD
 import { DashbordadminComponent } from './admin/dashbordadmin/dashbordadmin.component';
 import { SidebaradminComponent } from './admin/sidebaradmin/sidebaradmin.component';
 import { DashbordTeacherComponent } from './teacher/dashbord-teacher/dashbord-teacher.component';
 import { DetailsTrainingComponent } from './student/details-training/details-training.component';
 import { EditprofileComponent } from './teacher/editprofile/editprofile.component';
+=======
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { CdTimerModule } from 'angular-cd-timer';
+
+import { provideToastr } from 'ngx-toastr';
+import { ToastrModule } from 'ngx-toastr';
+import { TestquizComponent } from './testquiz/testquiz.component';
+>>>>>>> 96388486cf6ff1793cf9a7d2c6e9ed92abc557ed
 
 @NgModule({
   declarations: [
@@ -59,22 +69,38 @@ import { EditprofileComponent } from './teacher/editprofile/editprofile.componen
     PdfComponent,
     FilterPipe,
     DisplaytrainingComponents,
+<<<<<<< HEAD
     DashbordadminComponent,
     SidebaradminComponent,
     DashbordTeacherComponent,
     DetailsTrainingComponent,
     EditprofileComponent
+=======
+    TestquizComponent,
+    
+>>>>>>> 96388486cf6ff1793cf9a7d2c6e9ed92abc557ed
     ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CdTimerModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot({
+      positionClass: 'toast-top-center', // Set the position to top-right
+      preventDuplicates: true,
+    }),
+    
+
     
   ],
-  providers: [],
+  providers: [
+    provideAnimations(), // required animations providers
+    provideToastr(), // Toastr providers
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

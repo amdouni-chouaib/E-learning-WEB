@@ -13,6 +13,7 @@ import { compileNgModule } from '@angular/compiler';
 export class NavbarComponent implements OnInit  {
   userRole: string | null = null;
   token:any=localStorage.getItem("token")
+
   id:any=""
   iduser:any
   constructor(private route:Router,private service:ApiconsumeService){
@@ -22,7 +23,7 @@ export class NavbarComponent implements OnInit  {
       this.userRole=role
     })
     this.id=jwt_decode(this.token)
-    this.iduser="/profile/"+this.id.userId
+    this.iduser=this.id.userId
   }
   
   logged(){

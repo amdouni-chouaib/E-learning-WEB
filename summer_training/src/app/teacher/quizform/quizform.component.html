@@ -1,5 +1,21 @@
+<<<<<<< HEAD
 <div >
   <div class="quizform" >
+=======
+<div style="display: flex;justify-content: center;align-items: center;margin-top: 80px;">
+  <div style="width: 400px; height: 400px;">
+    <div *ngIf="error!=''">
+      <div class="alert alert-danger" role="alert">
+       {{error}}
+      </div>
+    </div>
+    <div *ngIf="success!=''">
+      <div class="alert alert-success" role="alert">
+       {{success}}
+      </div>
+    </div>
+    <br><br>
+>>>>>>> 96388486cf6ff1793cf9a7d2c6e9ed92abc557ed
     <h2>Add Question with Answers</h2>
     <form [formGroup]="questionForm" (ngSubmit)="submitForm()">
         <input type="hidden" formControlName="formation">

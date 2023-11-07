@@ -3,6 +3,7 @@
 <form [formGroup]="myForm" (ngSubmit)="onsubmit()">
   
     
+<<<<<<< HEAD
     <div style=" display: flex;justify-content: center;">
         <div class="" style="width: 100%;">
           <div *ngIf="error!=''">
@@ -63,5 +64,55 @@
             </div>
           </div>
         
+=======
+<div style="height: 100%; height: 100%; display: flex;justify-content: center;padding-top: 2%;padding-bottom: 5%;">
+    
+    <div class="card" style="width: 60%;">
+      <div *ngIf="error!=''">
+        <div class="alert alert-danger" role="alert">
+         {{error}}
+        </div>
+      </div>
+      <div *ngIf="success!=''">
+        <div class="alert alert-success" role="alert">
+         {{success}}
+        </div>
+      </div>
+      <br><br>
+        <div class="card-body">
+          <h5 class="card-title">Create Training </h5>
+          <label for="">Training Name</label>
+          <div> 
+            <input type="text" formControlName="nom" class="form-control">
+                    <span *ngIf="!myForm.get('nom')?.valid && myForm.get('nom')?.touched"
+                class="help-block red">Please enter a valid training name </span>
+          </div>
+          <label for="">Classroom </label>
+        <div>
+           <input type="text" formControlName="classroom" class="form-control">
+          <span *ngIf="!myForm.get('classroom')?.valid && myForm.get('classroom')?.touched"
+          class="help-block red">Please enter a valid training classroom </span>
+        </div> 
+          <label for="">Begin Date</label>
+          <div>
+            <input type="date" formControlName="datedebut" class="form-control"> 
+            <span *ngIf="!myForm.get('datedebut')?.valid && myForm.get('datedebut')?.touched"
+                class="help-block red">Please enter a valid training begin date </span>
+          </div>     
+          <label for="">End Date</label>
+          <div>
+          <input type="date" formControlName="datefin" class="form-control">
+          <span *ngIf="!myForm.get('datefin')?.valid && myForm.get('datefin')?.touched"
+                class="help-block red">Please enter a valid training end date </span>
+        </div>
+          <label for="">Training Description</label>
+          <div>
+          <textarea name="" formControlName="description" class="form-control"></textarea> 
+          <span *ngIf="!myForm.get('description')?.valid && myForm.get('description')?.touched"
+                class="help-block red">Please enter a valid training description  </span>
+        </div>
+          <br>
+          <button type="submit" class="btn btn-success">Valider</button>
+>>>>>>> 96388486cf6ff1793cf9a7d2c6e9ed92abc557ed
         </div>
     </form>

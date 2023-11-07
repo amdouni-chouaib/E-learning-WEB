@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ApiconsumeService } from '../apiconsume.service';
 import { Router } from '@angular/router';
 import jwt_decode from 'jwt-decode';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -12,14 +13,16 @@ import jwt_decode from 'jwt-decode';
 export class LoginComponent {
   userRole: string | undefined; // Add this variable to store user role
   jwt : any = ""
-  constructor(private service: ApiconsumeService, private route: Router) {}
+  error=""
+  constructor(private toastr: ToastrService,private service: ApiconsumeService, private route: Router) {}
 
   myForm = new FormGroup({
-    email: new FormControl('', [Validators.email, Validators.required]),
-    password: new FormControl('', [Validators.required]),
+    email:new FormControl ('', [Validators.required, Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]),
+    password: new FormControl('', [Validators.required,Validators.minLength(6)]),
   });
 
   onsubmit() {
+  
     this.service.signin(this.myForm.value).subscribe(
       (data: any) => {
         // Assuming the response contains a 'role' property
@@ -41,7 +44,7 @@ export class LoginComponent {
         // this.route.navigate(["/profile/"+this.jwt.userId])
       },
       (error) => {
-        console.error('Login failed', error);
+        this.error=error.error.error
       }
     );
   }

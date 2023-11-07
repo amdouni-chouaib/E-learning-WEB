@@ -20,8 +20,12 @@ import { QuizformComponent } from './teacher/quizform/quizform.component';
 import { PdfComponent } from './teacher/pdf/pdf.component';
 import { DisplaytrainingComponents } from './student/displaytraining/displaytraining.component';
 import { DisplaystudentTComponent } from './teacher/displaystudent-t/displaystudent-t.component';
+<<<<<<< HEAD
 import { DashbordTeacherComponent } from './teacher/dashbord-teacher/dashbord-teacher.component';
 import { DetailsTrainingComponent } from './student/details-training/details-training.component';
+=======
+import { TestquizComponent } from './testquiz/testquiz.component';
+>>>>>>> 96388486cf6ff1793cf9a7d2c6e9ed92abc557ed
 
 const routes: Routes = [
   {
@@ -73,6 +77,7 @@ const routes: Routes = [
     path:'displaytrainingstudent',component:DisplaytrainingComponents
   },
   {
+<<<<<<< HEAD
     path:'detailstrainingstudent',component:DetailsTrainingComponent
   },
   {
@@ -80,6 +85,9 @@ const routes: Routes = [
   },
   {
     path:'dashbordteacher',component:DashbordTeacherComponent
+=======
+    path:'test',component:TestquizComponent
+>>>>>>> 96388486cf6ff1793cf9a7d2c6e9ed92abc557ed
   },
   {
     path:'**',component:NotfoundComponent
