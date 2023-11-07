@@ -194,7 +194,7 @@
             Profile
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" [routerLink]="iduser">Edit Profile</a>
+            <a class="dropdown-item"[routerLink]="['/profile', iduser]">Edit Profile</a>
             <a class="dropdown-item" (click)="logout()">Logout</a>
           </div>
         </div>

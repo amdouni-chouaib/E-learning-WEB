@@ -9,8 +9,10 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ApiconsumeService {
   constructor(private http:HttpClient) { }
+
   private userRoleSubject = new BehaviorSubject<string | null>(null);
   userRole$ = this.userRoleSubject.asObservable();
+
 
   updateUserRole(role: string) {
     this.userRoleSubject.next(role);

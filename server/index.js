@@ -5,6 +5,7 @@ const cors = require('cors'); // Import the cors package
 const authRoutes = require('./router/authRoutes');
 const userRoutes = require('./router/userRoutes');
 const formations = require('./model/formation');
+const commentRoutes = require('./router/commentRoutes'); // Adjust the path as needed
 const quiz = require('./router/quizRoutes');
 // const PdfRoutes = require('./router/PdfRoutes');
 
@@ -72,6 +73,7 @@ app.use('/', authRoutes);
 app.use('/', userRoutes);
 app.use('/', formationRoutes);
 app.use('/',pdfRoutes);
+app.use('/comments',commentRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
