@@ -1,30 +1,30 @@
-
+<h5 class="card-title" style="padding-top:50px; text-align:center ;font-size: 30px;">Our Students </h5>
 
 <div >
   <div >
-      <div class="col-sm-7">
+      <div class="col-sm-12">
           <div class="from-outline mt-3">
             <input type="search" [(ngModel)]="searchtext" id="form1" class="form-control" placeholder="search" aria-label="search">
           </div> 
-          <table class="table table-striped" >
+          <table class="table table-striped">
               <thead>
-                <tr>
+                <tr  style="padding: 100px;">
                   <th scope="col ">#</th>
                   <th scope="col">Firstname</th>
-                  <th scope="col">Lastname</th>
+                  <th scope="col" >Lastname</th>
                   <th scope="col">email</th>
                   <th scope="col">Study level</th>
                   <th scope="col">University</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr *ngFor="let data of students|filter:searchtext| paginate: { itemsPerPage: 6, currentPage: p } ;let index = index  ">
+              <tbody  >
+                <tr  *ngFor="let data of students|filter:searchtext| paginate: { itemsPerPage: 6, currentPage: p } ;let index = index  ">
                   <th scope="row">{{index+1}}</th>
-                  <td>{{data.firstname}}</td>
-                  <td>{{data.lastname}}</td>
-                  <td>{{data.email}}</td>
-                  <td>{{data.level}}</td>
-                  <td>{{data.university}}</td>
+                  <td id="cell" >{{data.firstname}}</td>
+                  <td id="cell" >{{data.lastname}}</td>
+                  <td id="cell" >{{data.email}}</td>
+                  <td id="cell" >{{data.level}}</td>
+                  <td id="cell">{{data.university}}</td>
                 </tr>
               
               </tbody>

@@ -1,0 +1,41 @@
+/* Add this CSS to your stylesheet or in a <style> tag within your HTML */
+
+/* Style for the Delete button */
+.btn-delete {
+    background-color: #dc3545; /* Red color for danger */
+    color: #fff; /* Text color */
+    padding: 5px 10px; /* Adjust the padding as needed */
+    border: none; /* Remove the border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer;
+    margin-right: 10px; /* Adjust the margin as needed */
+    text-size-adjust: 5px;
+  }
+  
+  /* Style for the Update button */
+  .btn-update {
+    background-color: #2036dd; /* Blue color for info */
+    color: #fff; /* Text color */
+    padding: 5px 16px; /* Adjust the padding as needed */
+    border: none; /* Remove the border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer;
+  }
+  
+  /* Hover effect for both buttons */
+  .btn-delete:hover,
+  .btn-update:hover {
+    opacity: 0.9; /* Slight opacity on hover for visual feedback */
+  }
+  
+
+  .btn btn-outline-danger m-2{
+    size: 5px;
+
+  }
+  /* .table  .table-striped tr:nth-child(odd) {
+    background-color: #882626;
+} */
+#teacheraction{
+  padding-left: 60px;
+}

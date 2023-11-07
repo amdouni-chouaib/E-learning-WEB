@@ -12,7 +12,7 @@ export class ApiconsumeService {
   private userRoleSubject = new BehaviorSubject<string | null>(null);
   userRole$ = this.userRoleSubject.asObservable();
 
-  updateUserRole(role: string) {
+  updateUserRole(role: any) {
     this.userRoleSubject.next(role);
   }
   signin(user: any):Observable<any> {

@@ -1,6 +1,10 @@
 <div *ngIf="role==='admin'" style="display: flex;">
-    <app-sidebaradmin ></app-sidebaradmin>
-    <router-outlet style="width: auto;"></router-outlet>
+    <div>
+        <app-sidebaradmin ></app-sidebaradmin>
+    </div>
+    <div style="width: 100% !important">     
+        <router-outlet ></router-outlet>
+    </div>
 
 </div>
 <div *ngIf="role==='student' || role==='teacher' || role===null">

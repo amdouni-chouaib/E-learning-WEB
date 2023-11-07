@@ -31,6 +31,8 @@ import { DisplaytrainingComponents } from './student/displaytraining/displaytrai
 import { DashbordadminComponent } from './admin/dashbordadmin/dashbordadmin.component';
 import { SidebaradminComponent } from './admin/sidebaradmin/sidebaradmin.component';
 import { DashbordTeacherComponent } from './teacher/dashbord-teacher/dashbord-teacher.component';
+import { DetailsTrainingComponent } from './student/details-training/details-training.component';
+import { EditprofileComponent } from './teacher/editprofile/editprofile.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,9 @@ import { DashbordTeacherComponent } from './teacher/dashbord-teacher/dashbord-te
     DisplaytrainingComponents,
     DashbordadminComponent,
     SidebaradminComponent,
-    DashbordTeacherComponent
+    DashbordTeacherComponent,
+    DetailsTrainingComponent,
+    EditprofileComponent
     ],
   imports: [
     BrowserModule,

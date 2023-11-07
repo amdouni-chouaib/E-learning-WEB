@@ -1,8 +1,15 @@
+<h5 class="card-title" style="padding-top:50px; text-align:center ;font-size: 30px;">Summer Training's Courses  </h5>
+
 <div>
-    <div class="col-sm-7">
+    <div class="col-sm-12">
         <div class="from-outline mt-3">
-          <input type="search" [(ngModel)]="searchtext" id="form1" class="form-control" placeholder="search" aria-label="search">
-         <table class="table table-striped" >
+          <div > 
+            <p>Search for teacher : </p>
+          <input type="search" [(ngModel)]="searchtext" id="form1" class="form-control" placeholder="search" aria-label="search" >
+         
+          </div>
+          
+          <table class="table table-striped" >
             <thead>
               <tr>
                 <th scope="col">#</th>
@@ -21,8 +28,8 @@
                 <td>{{data.datefin}}</td>
                 <td>{{data.description}}</td>
                 <td> 
-                    <button class="btn btn-danger" (click)="deleteteacher(i)">Delete</button>
-                    <button class="btn btn-info"  [routerLink]="['/adminupdateformation/',i._id]">Update</button>
+                    <button type="button" class="btn btn-outline-danger m-2 " style ="margin: 5px;" (click)="deleteteacher(i)">Delete</button>
+                    <button type="button" class="btn btn-outline-primary m-2"  [routerLink]="['/adminupdateformation/',i._id]">Update</button>
                 </td>
                 
             </tr>

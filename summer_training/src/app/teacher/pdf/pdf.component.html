@@ -1,9 +1,11 @@
+<div class="pdfform" >
 <div class="card w-60 mx-auto mt-5 p-4">
+    <h2>Add Course</h2>
     <form [formGroup]="myForm" (ngSubmit)="sendData()">
         <input type="hidden" formControlName="formations">
 
            
-            <div class="col-4">
+            <div >
                 <input   formControlName="pdf"  type="file" (change)="onFileSelected($event)" class="form-control m-1"  placeholder="pdf" >
     
             </div>
@@ -15,3 +17,4 @@
             </div>
       </form>
     </div>
+</div>

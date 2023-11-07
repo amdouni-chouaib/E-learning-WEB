@@ -21,6 +21,7 @@ import { PdfComponent } from './teacher/pdf/pdf.component';
 import { DisplaytrainingComponents } from './student/displaytraining/displaytraining.component';
 import { DisplaystudentTComponent } from './teacher/displaystudent-t/displaystudent-t.component';
 import { DashbordTeacherComponent } from './teacher/dashbord-teacher/dashbord-teacher.component';
+import { DetailsTrainingComponent } from './student/details-training/details-training.component';
 
 const routes: Routes = [
   {
@@ -70,6 +71,9 @@ const routes: Routes = [
   },
   {
     path:'displaytrainingstudent',component:DisplaytrainingComponents
+  },
+  {
+    path:'detailstrainingstudent',component:DetailsTrainingComponent
   },
   {
     path:'dashbordadmin',component:DashbordadminComponent

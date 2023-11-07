@@ -33,32 +33,44 @@
       </div>
   </form> -->
 <!-- <body style="width: 100%;"> -->
-  
-    <div class="col-sm-7">
-      <div class="from-outline mt-3">
-          <h6 class="mb-4">Create Teacher</h6>
-          <form [formGroup]="myForm" (ngSubmit)="onsubmit()" >
-            <label for="">firstname</label>
-            <input type="text" formControlName="firstname" class="form-control">
-            <label for="">lastname</label>
-            <input type="text" formControlName="lastname" class="form-control">
-            <label for="">email</label>
-            <input type="email" formControlName="email" class="form-control">
-            <label for="">password</label>
-            <input type="password" formControlName="password" class="form-control">
-            <label for="">University</label>
-            <input type="text" formControlName="university" class="form-control">
-            <label for="">role</label>
-            <input type="text" formControlName="role" class="form-control"  >
-            <label for="">formation</label><br>
-            <select formControlName="formation" class="form-control">
-              <option>Select Training</option>
-              <option *ngFor="let data of arr" [value]="data._id">{{data.nom}}</option>
-            </select><br>
-            <button type="submit" class="btn btn-success">Valider</button>
-          </form>
+  <!-- <h5 class="card-title" style="padding-top:50px; text-align:center ;font-size: 30px;">Add New Teacher</h5> -->
+
+    <!-- Blank Start -->
+    <div class="container-fluid pt-4 px-4">
+        <!-- Account page navigation-->
+    <nav class="nav nav-borders">
+      <a class="nav-link ms-0" target="__blank">Add New Teacher</a>
+      
+  </nav>
+  <hr class="mt-0 mb-4">
+      <div class="row   rounded align-items-center justify-content-center mx-0">
+          <div class="">
+            <div style="align-items: space-around; width: 80%; padding-left:100px">
+              <div class="from-outline mt-3">
+                    <form [formGroup]="myForm" (ngSubmit)="onsubmit()" >
+                      <label for="">firstname</label>
+                      <input type="text" formControlName="firstname" class="form-control">
+                      <label for="">lastname</label>
+                      <input type="text" formControlName="lastname" class="form-control">
+                      <label for="">email</label>
+                      <input type="email" formControlName="email" class="form-control">
+                      <label for="">password</label>
+                      <input type="password" formControlName="password" class="form-control">
+                      <label for="">University</label>
+                      <input type="text" formControlName="university" class="form-control">
+                      <label for="">role</label>
+                      <input type="text" formControlName="role" class="form-control"  >
+                      <label for="">formation</label><br>
+                      <select formControlName="formation" class="form-control">
+                        <option>Select Training</option>
+                        <option *ngFor="let data of arr" [value]="data._id">{{data.nom}}</option>
+                      </select><br>
+                      <button type="submit" class="btn btn-success">Valider</button>
+                    </form>
+                </div>
+            </div>
+                    </div>
       </div>
   </div>
-
-
-<!-- </body> -->
+  <!-- Blank End -->
+ 
