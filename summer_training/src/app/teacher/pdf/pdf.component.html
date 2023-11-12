@@ -1,20 +1,6 @@
 <div class="pdfform" >
 <div class="card w-60 mx-auto mt-5 p-4">
-<<<<<<< HEAD
     <h2>Add Course</h2>
-=======
-    <div *ngIf="error!=''">
-        <div class="alert alert-danger" role="alert">
-         {{error}}
-        </div>
-      </div>
-      <div *ngIf="success!=''">
-        <div class="alert alert-success" role="alert">
-         {{success}}
-        </div>
-      </div>
-      <br><br>
->>>>>>> 96388486cf6ff1793cf9a7d2c6e9ed92abc557ed
     <form [formGroup]="myForm" (ngSubmit)="sendData()">
         <input type="hidden" formControlName="formations">
 

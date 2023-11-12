@@ -35,6 +35,7 @@ import { CdTimerModule } from 'angular-cd-timer';
 import { provideToastr } from 'ngx-toastr';
 import { ToastrModule } from 'ngx-toastr';
 import { TestquizComponent } from './testquiz/testquiz.component';
+import { SidebaradminComponent } from './admin/sidebaradmin/sidebaradmin.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { TestquizComponent } from './testquiz/testquiz.component';
     FilterPipe,
     DisplaytrainingComponents,
     TestquizComponent,
+    SidebaradminComponent
     
     ],
   imports: [
