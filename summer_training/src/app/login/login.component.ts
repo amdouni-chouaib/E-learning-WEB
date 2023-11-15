@@ -29,11 +29,11 @@ export class LoginComponent {
         const userRole = data.role;
         if(userRole==="admin"){
           // this.route.navigate(["/adminstudent"])
-          this.route.navigate(["/dashbordadmin"])
+          this.route.navigate(["/adminstudent"])
 
         }
         if(userRole==="teacher"){
-          this.route.navigate(["/dashbordteacher"])
+          this.route.navigate(["/adminstudent"])
         }
         if(userRole==="student"){
           this.route.navigate(["/displaytrainingstudent"])
@@ -41,6 +41,8 @@ export class LoginComponent {
         this.service.updateUserRole(userRole); 
         localStorage.setItem("token",data.token)
         this.jwt = jwt_decode(data.token)
+        // this.service.usertoken$=this.jwt
+         this.service.updateUsertoken(this.jwt)
         // this.route.navigate(["/profile/"+this.jwt.userId])
       },
       (error) => {

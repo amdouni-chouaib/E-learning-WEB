@@ -9,13 +9,16 @@ import { ApiconsumeService } from 'src/app/apiconsume.service';
 })
 export class SidebaradminComponent implements OnInit {
   userRole: any | null = null;
-
+  token :any | null = null;
   constructor(private route:Router ,private service:ApiconsumeService){
   }
   ngOnInit(): void {
     this.service.userRole$.subscribe((role:any)=>{
       this.userRole=role
     })  
+    this.service.usertoken$.subscribe((token:any)=>{
+      this.token=token
+    })
   
   }
 

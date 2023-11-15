@@ -10,6 +10,10 @@ import { BehaviorSubject } from 'rxjs';
 export class ApiconsumeService {
   constructor(private http:HttpClient) { }
 
+  data:any
+  id:any
+
+
   private userRoleSubject = new BehaviorSubject<string | null>(null);
   userRole$ = this.userRoleSubject.asObservable();
 
@@ -17,6 +21,15 @@ export class ApiconsumeService {
   updateUserRole(role: any) {
     this.userRoleSubject.next(role);
   }
+
+  private token = new BehaviorSubject<string | null>(null);
+  usertoken$ = this.token.asObservable();
+
+
+  updateUsertoken(token: any) {
+    this.token.next(token);
+  }
+
   signin(user: any):Observable<any> {
    return  this.http.post<any>('http://localhost:3001/login', user);
   }
@@ -35,12 +48,19 @@ export class ApiconsumeService {
   createtraining(data:any):Observable<any>{
     return this.http.post<any>("http://localhost:3001/createtraining", data);
   }
+  createtrainings(data:any):Observable<any>{
+    return this.http.post<any>("http://localhost:3001/formationss", data);
+  }
   createuser(data:any):Observable<any>{
     return this.http.post<any>("http://localhost:3001/createuser", data);
   }
   getAlltraining():Observable<any>{
     return this.http.get<any>("http://localhost:3001/getalltrainings");
   }
+  
+
+
+
   getoneuser(id:any):Observable<any>{
     return this.http.get<any>("http://localhost:3001/"+id);
   }
@@ -67,7 +87,9 @@ export class ApiconsumeService {
     return this.http.put("http://localhost:3001/training/"+id,data)
   }
 
-
+  createcomment(data:any):Observable<any>{
+    return this.http.post("http://localhost:3001/comments/new",data)
+  }
   updateFormation(id:any,data:any):Observable<any>{
     return this.http.put("http://localhost:3001/formation/"+id,data)
   }
@@ -78,4 +100,18 @@ export class ApiconsumeService {
     return this.http.put<any>("http://localhost:3001/traininguser/"+id,{formations});
   }
   
+  getcomment(id:any):Observable<any>{
+    return this.http.get("http://localhost:3001/comments/formation/"+id+"/comments")
+  }
+  getcourses(id:any):Observable<any>{
+    return this.http.get("http://localhost:3001/users/"+id+"/pdf-formations")
+  }
+  getquiz(id:any):Observable<any>{
+    return this.http.get("http://localhost:3001/formations/"+id+"/quizzes")
+  }
+
+  
+
+
+
 }

@@ -7,7 +7,6 @@ const userRoutes = require('./router/userRoutes');
 const formations = require('./model/formation');
 const commentRoutes = require('./router/commentRoutes'); // Adjust the path as needed
 const quiz = require('./router/quizRoutes');
-// const PdfRoutes = require('./router/PdfRoutes');
 
 const formationRoutes = require('./router/formationRoutes');
 const pdfRoutes = require('./router/PdfRoutes');
@@ -49,6 +48,10 @@ db.on('error', console.error.bind(console, 'Connection error:'));
 db.once('open', () => {
   console.log('Connected to MongoDB');
 });
+
+
+
+
 
 
 app.get('/getalltrainings', async (req, res) => {

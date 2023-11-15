@@ -31,17 +31,30 @@ router.post('/quiz',  async (req, res) => {
 // });
 
 // // Get a quiz question by ID
-// router.get('/quiz/:id', async (req, res) => {
-//   try {
-//     const quiz = await Quiz.findById(req.params.id).populate('formation');
-//     if (!quiz) {
-//       return res.status(404).send();
-//     }
-//     res.send(quiz);
-//   } catch (error) {
-//     res.status(500).send(error);
-//   }
-// });
+router.get('/quiz/:id', async (req, res) => {
+  try {
+    const quiz = await Quiz.findById(req.params.id).populate('formation');
+    if (!quiz) {
+      return res.status(404).send();
+    }
+    res.send(quiz);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+router.get('/formations/:formationId/quizzes', async (req, res) => {
+    try {
+      const formationId = req.params.formationId;
+  
+      // Find all questions that belong to the specified formation
+      const quizzes = await Quiz.find({ formation: formationId });
+  
+      res.json(quizzes);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Error fetching quizzes' });
+    }
+  });
 
 // // Update a quiz question by ID
 // router.patch('/quiz/:id', async (req, res) => {

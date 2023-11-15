@@ -31,11 +31,14 @@ import { DisplaytrainingComponents } from './student/displaytraining/displaytrai
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { CdTimerModule } from 'angular-cd-timer';
+import { StarRatingModule } from 'angular-star-rating';
 
 import { provideToastr } from 'ngx-toastr';
 import { ToastrModule } from 'ngx-toastr';
 import { TestquizComponent } from './testquiz/testquiz.component';
 import { SidebaradminComponent } from './admin/sidebaradmin/sidebaradmin.component';
+import { DetailsTrainingComponents } from './student/details-training/details-training.component';
+import { ClassComponent } from './student/class/class.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +67,7 @@ import { SidebaradminComponent } from './admin/sidebaradmin/sidebaradmin.compone
     DisplaytrainingComponents,
     TestquizComponent,
     SidebaradminComponent
-    
+    ,DetailsTrainingComponents, ClassComponent
     ],
   imports: [
     BrowserModule,
@@ -79,7 +82,7 @@ import { SidebaradminComponent } from './admin/sidebaradmin/sidebaradmin.compone
       positionClass: 'toast-top-center', // Set the position to top-right
       preventDuplicates: true,
     }),
-    
+    StarRatingModule
 
     
   ],

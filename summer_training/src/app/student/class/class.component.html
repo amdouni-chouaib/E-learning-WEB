@@ -1,0 +1,21 @@
+<div class="table-responsive">
+    <table class="table">
+    <thead>
+      <tr >
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Course</th>
+        <th scope="col">quiz</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of arr;let i = index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{data.formationName}}</td>
+        <td><a [href]="'http://localhost:3001/' + data.pdfFiles[0]" target="_blank">{{ data.pdfFiles[0] }}</a></td>
+        <td><Button (click)="sending(data.formationId)" class="btn btn-info">EXAM</Button></td>
+      </tr>
+     
+    </tbody>
+  </table>
+  </div>

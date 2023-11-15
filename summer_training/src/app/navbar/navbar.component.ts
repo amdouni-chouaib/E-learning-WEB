@@ -13,6 +13,7 @@ import { compileNgModule } from '@angular/compiler';
 export class NavbarComponent implements OnInit  {
   userRole: string | null = null;
   token:any=localStorage.getItem("token")
+  tokens :  any | null = null;
 
   id:any=""
   iduser:any
@@ -22,8 +23,11 @@ export class NavbarComponent implements OnInit  {
     this.service.userRole$.subscribe((role:any)=>{
       this.userRole=role
     })
-    this.id=jwt_decode(this.token)
-    this.iduser=this.id.userId
+    this.service.usertoken$.subscribe((token)=>{
+      this.tokens=token
+     })
+     console.log(this.tokens.userId)
+    
   }
   
   logged(){
@@ -31,8 +35,8 @@ export class NavbarComponent implements OnInit  {
   }
   
   logout(){
-     localStorage.removeItem('token')
      this.userRole=null
+     this.tokens=null
      this.route.navigate(["/login"])
   }
 

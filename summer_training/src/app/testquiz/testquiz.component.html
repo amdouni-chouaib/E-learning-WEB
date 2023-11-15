@@ -1,15 +1,27 @@
 <div class="timer">
   <button class="btn btn-info">  {{ minutes }}:{{ seconds | number: '2.0' }}</button>
-  </div>
-    <div class="bodys">
-          <div>
-            <input type="text"><br><input type="text"><br><input type="text"><br><input type="text"><br><input type="text"><br><input type="text"><br><input type="text">
-          </div><br>
+</div>
+
+<div class="bodys">
+  <div>
+    <div *ngFor="let question of arr; let i = index">
+      <h4>{{ question.description }}</h4>
+      <form *ngIf="!isSubmitted">
+        <div *ngFor="let alternative of question.alternatives; let j = index">
+          <input
+            type="{{ isMultipleCorrect(question.alternatives) ? 'checkbox' : 'radio' }}"
+            [id]="'question_' + i + '_alternative_' + j"
+            [name]="'question_' + i"
+            [checked]="isOptionSelected(i, j)"
+            (change)="onSelectOption(i, j)"
+          />
+          <label [for]="'question_' + i + '_alternative_' + j">{{ alternative.text }}</label>
         </div>
-        <div style="display: flex;justify-content: center;align-items: center;">
-          <button class="btn btn-danger" style="margin-right:20px ;">chouaib</button>
-          <button class="btn btn-danger">chouaib</button>
-        </div>
-    
-        
-    
+      </form>
+    </div>
+  </div><br>
+</div>
+
+<div style="display: flex;justify-content: center;align-items: center;">
+  <button class="btn btn-danger" (click)="calculateScore()" [disabled]="isSubmitted">Valider</button>
+</div>

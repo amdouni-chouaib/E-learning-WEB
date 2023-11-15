@@ -21,7 +21,12 @@ const formationSchema = new mongoose.Schema({
   classroom: {
     type: String,
     required: true,
-  }
+  },
+  picture:{
+    type:String,
+    required:true,
+  },
+  
 });
 
 const Formation = mongoose.model('Formation', formationSchema);

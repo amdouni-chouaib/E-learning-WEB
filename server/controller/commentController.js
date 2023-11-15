@@ -3,13 +3,12 @@ const Comment = require('../model/Comment'); // Assuming your model is in a 'mod
 // Controller for creating a new comment
 exports.createComment = async (req, res) => {
   try {
-    const { trainingId, userId, comment, rating } = req.body;
+    const { trainingId, userId, comment } = req.body;
 
     const newComment = new Comment({
       trainingId,
       userId,
       comment,
-      rating,
     });
 
     const savedComment = await newComment.save();

@@ -3,6 +3,7 @@ const factory = require('../controller/factory');
 const router = express.Router();
 const user = require('../model/user')
 const bcrypt = require("bcrypt");
+const Formation = require("../model/formation")
 const User = require('../model/user');
 // Create a new user
 router.post('/createuser', async (req, res) => {
@@ -58,5 +59,29 @@ router.delete('/:id', factory.deleteOne(user));
 
 // Delete all users
 router.delete('/user', factory.deleteAll(user));
+
+
+
+router.get('/formations/:formationId/users', async (req, res) => {
+  try {
+    const formationId = req.params.formationId;
+
+    // Find the formation by ID
+    const formation = await Formation.findById(formationId);
+
+    if (!formation) {
+      return res.status(404).json({ error: 'Formation not found' });
+    }
+
+    // Find users associated with the formation using a separate query
+    const users = await user.find({ formations: formationId }, 'firstname lastname email');
+
+    res.json(users);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Error fetching users' });
+  }
+});
+
 
 module.exports = router;

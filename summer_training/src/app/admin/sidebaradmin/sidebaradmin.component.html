@@ -24,6 +24,10 @@
                     <a routerLink="/admindisplayteacher" class="nav-item nav-link"><i class="fas fa-users teachers-icon"></i>All Teachers</a>
                     <a routerLink="/admindisplayformation" class="nav-item nav-link"><i class="fas fa-book courses-icon"></i>All Courses</a>
                     <a routerLink="/adminstudent" class="nav-item nav-link"><i class="fas fa-users user-icon"></i>All Students </a>
+                    <a [routerLink]="['/profile/', token.userId]" class="nav-item nav-link"><i class="fas fa-user"></i>
+                        Profile
+                    </a>
+                    
                     <!-- <button class="dropdown-item" (click)="logout()">Logout</button> -->
                     <a  class="nav-item nav-link" (click)="logout()" style="color: red"><i class="fas fa-sign-out-alt me-2" style="color: red"></i> Logout </a>
 

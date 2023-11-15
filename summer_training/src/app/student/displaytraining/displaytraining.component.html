@@ -27,7 +27,7 @@
             <div class="row">
                 <div *ngFor="let data of arr;let i as index" class="col-lg-4 mb-5">
                     <div class="card border-0 bg-light shadow-sm pb-2">
-                        <img class="card-img-top mb-2" src="../../../assets/img/oca.jpg" alt="">
+                        <img class="card-img-top mb-2" [src]="'http://localhost:3001/' + data.picture" alt="" width="200px" height="200px">
                         <div class="card-body text-center">
                             <h4 class="card-title">{{data.nom}}</h4>
                             <p class="card-text">{{data.description}}</p>
@@ -44,7 +44,7 @@
                                 <div class="col-6 py-1">{{data.datefin}}</div>
                             </div>
                         </div>
-                        <a  (click)="joining(i)" class="btn btn-primary px-4 mx-auto mb-4">Join Now</a>
+                        <a  (click)="send(i)" [routerLink]="['/detailstraining/',i._id]" class="btn btn-primary px-4 mx-auto mb-4">Read More</a>
                     </div>
                 </div>
                 

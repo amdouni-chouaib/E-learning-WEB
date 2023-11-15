@@ -27,6 +27,12 @@ export class DisplaytrainingComponents implements OnInit{
   
   }
 
+send(i:any){  
+    // this.service.data=i
+    console.log(i._id)
+      }
+
+
 
   joining(i:any){
     let index=i._id

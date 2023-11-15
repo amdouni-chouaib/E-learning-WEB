@@ -21,6 +21,8 @@ import { PdfComponent } from './teacher/pdf/pdf.component';
 import { DisplaytrainingComponents } from './student/displaytraining/displaytraining.component';
 import { DisplaystudentTComponent } from './teacher/displaystudent-t/displaystudent-t.component';
 import { TestquizComponent } from './testquiz/testquiz.component';
+import { DetailsTrainingComponents } from './student/details-training/details-training.component';
+import { ClassComponent } from './student/class/class.component';
 
 const routes: Routes = [
   {
@@ -71,8 +73,15 @@ const routes: Routes = [
   {
     path:'displaytrainingstudent',component:DisplaytrainingComponents
   },
+
   {
-    path:'test',component:TestquizComponent
+    path:'detailstraining/:id',component:DetailsTrainingComponents
+  },  
+  {
+    path:'test/:id',component:TestquizComponent
+  },
+  {
+    path:'class',component:ClassComponent
   },
   {
     path:'**',component:NotfoundComponent
